@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Bloody_Roar_2/1.0.0": {
+        "runtime": {
+          "Bloody_Roar_2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bloody_Roar_2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "gobrSC3n+ug=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Lab15-PC01\\Downloads\\Bloody_roar_2 - Proyecto\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lab15-PC01\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512"
+  ],
+  "logs": []
+}
