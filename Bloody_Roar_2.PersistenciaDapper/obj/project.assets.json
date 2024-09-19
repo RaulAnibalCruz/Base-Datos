@@ -62,35 +62,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lab15-PC01\\.nuget\\packages\\": {}
+    "/home/et12alumno/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lab15-PC01\\Downloads\\Bloody_roar_2 - Proyecto\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj",
+      "projectUniqueName": "/home/et12alumno/Escritorio/Base-Datos/Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj",
       "projectName": "Bloody_Roar_2.PersistenciaDapper",
-      "projectPath": "C:\\Users\\Lab15-PC01\\Downloads\\Bloody_roar_2 - Proyecto\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj",
-      "packagesPath": "C:\\Users\\Lab15-PC01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lab15-PC01\\Downloads\\Bloody_roar_2 - Proyecto\\Bloody_Roar_2.PersistenciaDapper\\obj\\",
+      "projectPath": "/home/et12alumno/Escritorio/Base-Datos/Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj",
+      "packagesPath": "/home/et12alumno/.nuget/packages/",
+      "outputPath": "/home/et12alumno/Escritorio/Base-Datos/Bloody_Roar_2.PersistenciaDapper/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lab15-PC01\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/et12alumno/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Lab15-PC01\\Downloads\\Bloody_roar_2 - Proyecto\\Bloody_Roar_2\\Bloody_Roar_2.csproj": {
-              "projectPath": "C:\\Users\\Lab15-PC01\\Downloads\\Bloody_roar_2 - Proyecto\\Bloody_Roar_2\\Bloody_Roar_2.csproj"
+            "/home/et12alumno/Escritorio/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj": {
+              "projectPath": "/home/et12alumno/Escritorio/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj"
             }
           }
         }
@@ -99,11 +96,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -131,7 +123,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
