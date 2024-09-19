@@ -1,0 +1,218 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper.Test/Bloody_Roar_2.PersistenciaDapper.Test.csproj": {}
+  },
+  "projects": {
+    "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper.Test/Bloody_Roar_2.PersistenciaDapper.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper.Test/Bloody_Roar_2.PersistenciaDapper.Test.csproj",
+        "projectName": "Bloody_Roar_2.PersistenciaDapper.Test",
+        "projectPath": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper.Test/Bloody_Roar_2.PersistenciaDapper.Test.csproj",
+        "packagesPath": "/home/et12alumno/.nuget/packages/",
+        "outputPath": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper.Test/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj": {
+                "projectPath": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj"
+              },
+              "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2/Bloody_Roar_2.csproj": {
+                "projectPath": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2/Bloody_Roar_2.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.6.0, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.3.7, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj",
+        "projectName": "Bloody_Roar_2.PersistenciaDapper",
+        "projectPath": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj",
+        "packagesPath": "/home/et12alumno/.nuget/packages/",
+        "outputPath": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2/Bloody_Roar_2.csproj": {
+                "projectPath": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2/Bloody_Roar_2.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2/Bloody_Roar_2.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2/Bloody_Roar_2.csproj",
+        "projectName": "Bloody_Roar_2",
+        "projectPath": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2/Bloody_Roar_2.csproj",
+        "packagesPath": "/home/et12alumno/.nuget/packages/",
+        "outputPath": "/home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

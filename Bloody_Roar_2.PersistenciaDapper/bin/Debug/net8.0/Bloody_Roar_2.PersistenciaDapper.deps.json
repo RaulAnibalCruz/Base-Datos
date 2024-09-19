@@ -25,10 +25,7 @@
       },
       "Bloody_Roar_2/1.0.0": {
         "runtime": {
-          "Bloody_Roar_2.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Bloody_Roar_2.dll": {}
         }
       }
     }

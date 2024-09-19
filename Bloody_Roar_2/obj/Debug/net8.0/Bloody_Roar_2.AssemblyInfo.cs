@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bloody_Roar_2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c3fad7278268146e79eb1d31b3f30c022399900")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a48c65ff97f3b74b12a036ca136e4f2a8a0ffd9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bloody_Roar_2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bloody_Roar_2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
