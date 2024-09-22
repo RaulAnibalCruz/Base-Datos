@@ -50,3 +50,19 @@ C:/Users/Lab15-PC01/Downloads/Bloody_roar_2 - Proyecto/Bloody_Roar_2.Persistenci
 /home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper/obj/Debug/net8.0/refint/Bloody_Roar_2.PersistenciaDapper.dll
 /home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper/obj/Debug/net8.0/Bloody_Roar_2.PersistenciaDapper.pdb
 /home/et12alumno/Escritorio/Bloody_roar_2 - Proyecto/Bloody_Roar_2.PersistenciaDapper/obj/Debug/net8.0/ref/Bloody_Roar_2.PersistenciaDapper.dll
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\bin\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.deps.json
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\bin\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.dll
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\bin\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.pdb
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\bin\Debug\net8.0\Bloody_Roar_2.dll
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\bin\Debug\net8.0\Bloody_Roar_2.pdb
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.csproj.AssemblyReference.cache
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.AssemblyInfoInputs.cache
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.AssemblyInfo.cs
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.csproj.CoreCompileInputs.cache
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.sourcelink.json
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\Bloody_R.6D7F9DDB.Up2Date
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.dll
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\refint\Bloody_Roar_2.PersistenciaDapper.dll
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\Bloody_Roar_2.PersistenciaDapper.pdb
+C:\Users\urano\Documents\Bloody_roar2\Base-Datos\Bloody_Roar_2.PersistenciaDapper\obj\Debug\net8.0\ref\Bloody_Roar_2.PersistenciaDapper.dll

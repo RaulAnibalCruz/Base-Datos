@@ -33,15 +33,14 @@ public class DaoDapper : IDao
 
         _conexion.Execute("AltaPersonaje", parametros);
     }
-    
-    // public void ActualizarDuracionCombate (int p_idCombate,int p_Duracion ) 
-    //     {
-    //         var parametros: new DynamicParameters();
-    //     parametros.Add("@p_IdCombate", direction: ParameterDirection.Output);
-    //     parametros.Add("@p_Duracion", personaje.Nombre);
-    //     parametros.Add("@p_NombreBestia", personaje.NombreBestia);
+     public void ActualizarDuracionCombate (Combate combate ) 
+    {
+        var parametros = new DynamicParameters();
+        parametros.Add("@p_IdCombate", direction: ParameterDirection.Output);
+        parametros.Add("@p_Duracion", combate.Duracion);       
 
-    //     }
+        _conexion.Execute("ActualizarDuracionCombate", parametros);
+    }
 }
 
 
