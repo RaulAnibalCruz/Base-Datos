@@ -33,14 +33,25 @@ public class DaoDapper : IDao
 
         _conexion.Execute("AltaPersonaje", parametros);
     }
-     public void ActualizarDuracionCombate (Combate combate ) 
+    public void ActualizarDuracionCombate(int idCombate, int nuevaDuracion)
     {
-        var parametros = new DynamicParameters();
-        parametros.Add("@p_IdCombate", direction: ParameterDirection.Output);
-        parametros.Add("@p_Duracion", combate.Duracion);       
+        var query = "UPDATE Combate SET Duracion = @NuevaDuracion WHERE IdCombate = @IdCombate";
+        
+        
+        _conexion.Execute(query, new { NuevaDuracion = nuevaDuracion, IdCombate = idCombate });
+    }
+        public Combate ObtenerCombatePorId(int idCombate)
+    {
+        var query = "SELECT * FROM Combates WHERE IdCombate = @IdCombate";
+        
+        // Usamos QueryFirstOrDefault para devolver el primer resultado o null si no lo encuentra
+        var combate = _conexion.QueryFirstOrDefault<Combate>(query, new { IdCombate = idCombate });
+        
+        return combate;
+    }
 
-        _conexion.Execute("ActualizarDuracionCombate", parametros);
+    object IDao.ObtenerCombatePorId(int idCombate)
+    {
+        throw new NotImplementedException();
     }
 }
-
-
