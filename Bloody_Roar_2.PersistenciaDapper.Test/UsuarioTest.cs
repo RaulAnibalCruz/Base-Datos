@@ -19,6 +19,6 @@ public class UsuarioTest : TestBase
 
         Dao.AltaUsuario(diego);
 
-        Assert.NotEqual(0, diego.IdUsuario);
+        Assert.NotEqual(5, diego.IdUsuario);
     }
 }

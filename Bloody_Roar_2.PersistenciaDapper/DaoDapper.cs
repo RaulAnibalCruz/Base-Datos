@@ -22,7 +22,7 @@ public class DaoDapper : IDao
         _conexion.Execute("AltaUsuario", parametros);
     }
 
-    public void AltaPersonaje (Personaje personaje)
+    public void AltaPersonaje(Personaje personaje)
     {
         var parametros = new DynamicParameters();
         parametros.Add("@p_IdPersonaje", direction: ParameterDirection.Output);
@@ -33,6 +33,14 @@ public class DaoDapper : IDao
 
         _conexion.Execute("AltaPersonaje", parametros);
     }
+    public void AltaAtaque(Ataque ataque){
+        var parametros = new DynamicParameters();
+        parametros.Add("@unIdAtaque", direction: ParameterDirection.Output);
+        parametros.Add("@unTipoAtaque", ataque.TipoAtaque);
+        parametros.Add("@unDanio", ataque.Danio);
+
+        _conexion.Execute("AltaAtaque", parametros);
+    }
     public void ActualizarDuracionCombate(int idCombate, int nuevaDuracion)
     {
         var query = "UPDATE Combate SET Duracion = @NuevaDuracion WHERE IdCombate = @IdCombate";
@@ -42,7 +50,7 @@ public class DaoDapper : IDao
     }
         public Combate ObtenerCombatePorId(int idCombate)
     {
-        var query = "SELECT * FROM Combates WHERE IdCombate = @IdCombate";
+        var query = "SELECT * FROM Combate WHERE IdCombate = @IdCombate";
         
         // Usamos QueryFirstOrDefault para devolver el primer resultado o null si no lo encuentra
         var combate = _conexion.QueryFirstOrDefault<Combate>(query, new { IdCombate = idCombate });
@@ -50,8 +58,4 @@ public class DaoDapper : IDao
         return combate;
     }
 
-    object IDao.ObtenerCombatePorId(int idCombate)
-    {
-        throw new NotImplementedException();
-    }
 }

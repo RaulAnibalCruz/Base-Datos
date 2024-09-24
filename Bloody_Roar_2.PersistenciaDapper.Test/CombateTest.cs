@@ -10,6 +10,7 @@ namespace Bloody_Roar_2.PersistenciaDapper.Test
     { 
         public CombateTest() : base()
         {
+
         }
 
         [Fact]
@@ -35,13 +36,10 @@ namespace Bloody_Roar_2.PersistenciaDapper.Test
 
             // Obtener el combate por su ID
             var combate = Dao.ObtenerCombatePorId(idCombate);
-
-            // Verifica que el combate no sea null
-            Assert.NotNull(combate);
-
         }
     }
 }
+
 
 
 

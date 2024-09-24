@@ -1,4 +1,4 @@
--- Active: 1700068523370@@127.0.0.1@3306@5to_Bloody_Roar_2
+-- Active: 1727132803198@@127.0.0.1@3306@5to_bloody_roar_2
 USE `5to_Bloody_Roar_2`;
 
 #Para agregar algun personaje
@@ -32,16 +32,15 @@ BEGIN
     INSERT INTO Ataque (Tipo_Ataque, Danio) 
     VALUES (unTipoAtaque, unDanio);
     SET unIdAtaque = LAST_INSERT_ID();
-END$$
+END $$
 
 #Para agregar un combate
 DELIMITER $$
 DROP PROCEDURE IF EXISTS AltaCombate $$
-CREATE PROCEDURE AltaCombate(OUT p_idCombate INT, IN p_idPersonaje INT, IN p_idJugador INT, IN p_idModo_Juego INT, IN p_Duracion INT
-)
+CREATE PROCEDURE AltaCombate(OUT p_idCombate INT, IN p_idPersonaje INT, IN p_idUsuario INT, IN p_idModo_Juego INT, IN p_Duracion INT)
 BEGIN
-    INSERT INTO Combate (idPersonaje, idJugador, idModo_Juego, Duracion)
-    VALUES (p_idCombate, p_idPersonaje, p_idJugador, p_idModo_Juego, p_Duracion);
+    INSERT INTO Combate (idPersonaje, idUsuario, idModo_Juego, Duracion)
+    VALUES (p_idCombate, p_idPersonaje, p_idUsuario, p_idModo_Juego, p_Duracion);
     SET p_idCombate = LAST_INSERT_ID();
 END $$
 
