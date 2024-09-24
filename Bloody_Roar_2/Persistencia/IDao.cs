@@ -10,4 +10,6 @@ public interface IDao
     Combate ObtenerCombatePorId(int idCombate);
     void AltaAtaque(Ataque ataque);
 
+    void AltaModoJuego(ModoJuego modoJuego);
+
 }

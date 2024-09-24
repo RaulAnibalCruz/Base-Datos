@@ -55,3 +55,23 @@ BEGIN
     SET Duracion = p_Duracion
     WHERE idCombate = p_idCombate;
 END $$
+
+#Para dar de alta un modo de juego
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS AltaModoJuego $$
+CREATE PROCEDURE AltaModoJuego (OUT unIdModoJuego INT, IN unNombre VARCHAR(45))
+BEGIN
+    INSERT INTO modojuego(idModoJuego, Nombre)
+    VALUES (unIdModoJuego, unNombre);
+    SET unIdModoJuego = LAST_INSERT_ID();
+END $$
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS AgregarModoJuego $$
+CREATE PROCEDURE AgregarModoJuego (OUT unIdModoJuego INT, IN unNombre VARCHAR(45))
+BEGIN
+    UPDATE modojuego
+    SET Nombre = unNombre
+    WHERE idModoJuego = unIdModoJuego;
+END $$

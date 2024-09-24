@@ -41,6 +41,13 @@ public class DaoDapper : IDao
 
         _conexion.Execute("AltaAtaque", parametros);
     }
+    public void AltaModoJuego(ModoJuego modoJuego){
+        var parametros = new DynamicParameters();
+        parametros.Add("@unIdModoJuego", direction: ParameterDirection.Output);
+        parametros.Add("unNombre", modoJuego.Nombre);
+
+        _conexion.Execute("AltaModoJuego", parametros);
+    }
     public void ActualizarDuracionCombate(int idCombate, int nuevaDuracion)
     {
         var query = "UPDATE Combate SET Duracion = @NuevaDuracion WHERE IdCombate = @IdCombate";
