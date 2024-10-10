@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj": {}
+    "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj": {}
   },
   "projects": {
-    "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj": {
+    "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj",
+        "projectUniqueName": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj",
         "projectName": "Bloody_Roar_2",
-        "projectPath": "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj",
-        "packagesPath": "C:\\Users\\urano\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2\\obj\\",
+        "projectPath": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj",
+        "packagesPath": "/home/et12alumno/.nuget/packages/",
+        "outputPath": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\urano\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -58,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

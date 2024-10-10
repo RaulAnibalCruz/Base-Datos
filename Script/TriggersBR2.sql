@@ -1,11 +1,9 @@
--- Active: 1727023960727@@127.0.0.1@3306
+-- Active: 1691412339871@@127.0.0.1@3306@5to_Bloody_Roar_2
 USE `5to_Bloody_Roar_2`;
 
 # Este trigger establece la resistencia en 10 cuando se añade un personaje 
 DELIMITER $$
-
 DROP TRIGGER IF EXISTS Personaje_BEFORE_INSERT$$
-
 CREATE TRIGGER Personaje_BEFORE_INSERT 
 BEFORE INSERT ON Personaje 
 FOR EACH ROW

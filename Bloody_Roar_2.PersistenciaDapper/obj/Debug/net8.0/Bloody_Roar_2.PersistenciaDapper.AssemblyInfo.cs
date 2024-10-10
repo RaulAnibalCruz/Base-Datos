@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bloody_Roar_2.PersistenciaDapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47bc1c4d7855a56046746aeb9636eb7a00baf2ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3715a9310f46267ba747707f9b17299d0f7164c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bloody_Roar_2.PersistenciaDapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bloody_Roar_2.PersistenciaDapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

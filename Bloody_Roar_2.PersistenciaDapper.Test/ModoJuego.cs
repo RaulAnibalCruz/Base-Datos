@@ -22,6 +22,4 @@ public class ModoJuegoTest : TestBase
 
         Dao.AltaModoJuego(arcade);
     }
-
-    
 }

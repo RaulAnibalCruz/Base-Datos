@@ -6268,19 +6268,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\urano\\.nuget\\packages\\": {}
+    "/home/et12alumno/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper.Test\\Bloody_Roar_2.PersistenciaDapper.Test.csproj",
+      "projectUniqueName": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2.PersistenciaDapper.Test/Bloody_Roar_2.PersistenciaDapper.Test.csproj",
       "projectName": "Bloody_Roar_2.PersistenciaDapper.Test",
-      "projectPath": "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper.Test\\Bloody_Roar_2.PersistenciaDapper.Test.csproj",
-      "packagesPath": "C:\\Users\\urano\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper.Test\\obj\\",
+      "projectPath": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2.PersistenciaDapper.Test/Bloody_Roar_2.PersistenciaDapper.Test.csproj",
+      "packagesPath": "/home/et12alumno/.nuget/packages/",
+      "outputPath": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2.PersistenciaDapper.Test/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\urano\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/et12alumno/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -6292,11 +6292,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj": {
-              "projectPath": "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj"
+            "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj": {
+              "projectPath": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj"
             },
-            "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj": {
-              "projectPath": "c:\\Users\\urano\\Documents\\Bloody_roar2\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj"
+            "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj": {
+              "projectPath": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj"
             }
           }
         }
@@ -6305,11 +6305,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -6365,7 +6360,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
