@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj": {}
+    "/home/et12alumno/Async/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj": {}
   },
   "projects": {
-    "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj": {
+    "/home/et12alumno/Async/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj",
+        "projectUniqueName": "/home/et12alumno/Async/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj",
         "projectName": "Bloody_Roar_2",
-        "projectPath": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj",
+        "projectPath": "/home/et12alumno/Async/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj",
         "packagesPath": "/home/et12alumno/.nuget/packages/",
-        "outputPath": "/home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/obj/",
+        "outputPath": "/home/et12alumno/Async/Base-Datos/Bloody_Roar_2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/et12alumno/.nuget/NuGet/NuGet.Config"
