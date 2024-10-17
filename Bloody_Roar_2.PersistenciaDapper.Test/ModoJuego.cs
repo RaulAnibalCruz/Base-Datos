@@ -21,5 +21,6 @@ public class ModoJuegoTest : TestBase
         };
 
         Dao.AltaModoJuego(arcade);
+        Assert.NotEqual(0, arcade.IdModoJuego);
     }
 }

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bloody_Roar_2.PersistenciaDapper", "Bloody_Roar_2.PersistenciaDapper\Bloody_Roar_2.PersistenciaDapper.csproj", "{F9272A09-1BE7-4684-B02C-8711A2545DB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bloody_Roar_2", "Bloody_Roar_2\Bloody_Roar_2.csproj", "{7C9F929C-E3CD-4BD7-B2D6-E870DA405414}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bloody_Roar_2.PersistenciaDapper.Test", "Bloody_Roar_2.PersistenciaDapper.Test\Bloody_Roar_2.PersistenciaDapper.Test.csproj", "{947D9E02-7BD6-4A1D-84FC-AF79281F2876}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bloody_Roar_2.PersistenciaDapper", "Bloody_Roar_2.PersistenciaDapper\Bloody_Roar_2.PersistenciaDapper.csproj", "{88A9D1DA-7360-439A-B14F-0CD6132185B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bloody_Roar_2", "Bloody_Roar_2\Bloody_Roar_2.csproj", "{9F4FCF09-D181-457E-A466-2D9C393A00B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bloody_Roar_2.PersistenciaDapper.Test", "Bloody_Roar_2.PersistenciaDapper.Test\Bloody_Roar_2.PersistenciaDapper.Test.csproj", "{35CEAD52-87D2-426B-8B99-B8B40FDE97E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F9272A09-1BE7-4684-B02C-8711A2545DB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9272A09-1BE7-4684-B02C-8711A2545DB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9272A09-1BE7-4684-B02C-8711A2545DB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9272A09-1BE7-4684-B02C-8711A2545DB9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{947D9E02-7BD6-4A1D-84FC-AF79281F2876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{947D9E02-7BD6-4A1D-84FC-AF79281F2876}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{947D9E02-7BD6-4A1D-84FC-AF79281F2876}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{947D9E02-7BD6-4A1D-84FC-AF79281F2876}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9F4FCF09-D181-457E-A466-2D9C393A00B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9F4FCF09-D181-457E-A466-2D9C393A00B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9F4FCF09-D181-457E-A466-2D9C393A00B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9F4FCF09-D181-457E-A466-2D9C393A00B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C9F929C-E3CD-4BD7-B2D6-E870DA405414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C9F929C-E3CD-4BD7-B2D6-E870DA405414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C9F929C-E3CD-4BD7-B2D6-E870DA405414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C9F929C-E3CD-4BD7-B2D6-E870DA405414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88A9D1DA-7360-439A-B14F-0CD6132185B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A9D1DA-7360-439A-B14F-0CD6132185B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A9D1DA-7360-439A-B14F-0CD6132185B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A9D1DA-7360-439A-B14F-0CD6132185B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35CEAD52-87D2-426B-8B99-B8B40FDE97E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CEAD52-87D2-426B-8B99-B8B40FDE97E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CEAD52-87D2-426B-8B99-B8B40FDE97E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CEAD52-87D2-426B-8B99-B8B40FDE97E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

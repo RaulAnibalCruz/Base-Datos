@@ -23,5 +23,6 @@ public class PersonajeTest : TestBase
         };
 
         Dao.AltaPersonaje(yugo);
+        Assert.NotEqual(0, yugo.IdPersonaje);
     }
 }

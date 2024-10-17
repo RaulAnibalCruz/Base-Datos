@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FIb6FmurjNsPC6LhPdZbxUqWziPqYgqwFmNLNgpKVB3hSKbM/zzSzf6YNx96O8r1olCZczF9RDXPUXKDGTQC0g==",
+  "dgSpecHash": "AJ4R48GnSzcriP125uPgWaEaTTe9fIbqeiqY01F7QMDSQAXj363DB9ObpaHR0DbrIOKSf2PPYnRZnobGkqy+Ug==",
   "success": true,
-  "projectFilePath": "/home/et12alumno/Async/Base-Datos/Bloody_Roar_2.PersistenciaDapper.Test/Bloody_Roar_2.PersistenciaDapper.Test.csproj",
+  "projectFilePath": "/mnt/Datos/Base-Datos/Bloody_Roar_2.PersistenciaDapper.Test/Bloody_Roar_2.PersistenciaDapper.Test.csproj",
   "expectedPackageFiles": [
     "/home/et12alumno/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
     "/home/et12alumno/.nuget/packages/dapper/2.1.35/dapper.2.1.35.nupkg.sha512",

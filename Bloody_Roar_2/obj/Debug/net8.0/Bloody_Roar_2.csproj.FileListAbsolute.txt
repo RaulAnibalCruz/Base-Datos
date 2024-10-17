@@ -68,3 +68,15 @@ C:/Users/urano/Documents/Bloody_roar2/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/
 /home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/refint/Bloody_Roar_2.dll
 /home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/Bloody_Roar_2.pdb
 /home/et12alumno/Escritorio/Base-Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/ref/Bloody_Roar_2.dll
+/mnt/Datos/Base-Datos/Bloody_Roar_2/bin/Debug/net8.0/Bloody_Roar_2.deps.json
+/mnt/Datos/Base-Datos/Bloody_Roar_2/bin/Debug/net8.0/Bloody_Roar_2.dll
+/mnt/Datos/Base-Datos/Bloody_Roar_2/bin/Debug/net8.0/Bloody_Roar_2.pdb
+/mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/Bloody_Roar_2.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/Bloody_Roar_2.AssemblyInfoInputs.cache
+/mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/Bloody_Roar_2.AssemblyInfo.cs
+/mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/Bloody_Roar_2.csproj.CoreCompileInputs.cache
+/mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/Bloody_Roar_2.sourcelink.json
+/mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/Bloody_Roar_2.dll
+/mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/refint/Bloody_Roar_2.dll
+/mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/Bloody_Roar_2.pdb
+/mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/ref/Bloody_Roar_2.dll

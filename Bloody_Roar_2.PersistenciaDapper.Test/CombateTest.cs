@@ -31,5 +31,8 @@ public class CombateTest : TestBase
 
         // Obtener el combate por su ID
         var combate = Dao.ObtenerCombatePorId(idCombate);
+
+        Assert.NotNull(combate);
+        Assert.Equal(idCombate, combate.IdCombate);
     }
 }
