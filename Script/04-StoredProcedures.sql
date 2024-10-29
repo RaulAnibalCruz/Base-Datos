@@ -1,4 +1,4 @@
--- Active: 1691412339871@@127.0.0.1@3306@5to_Bloody_Roar_2
+-- Active: 1727132803198@@127.0.0.1@3306@5to_bloody_roar_2
 USE `5to_Bloody_Roar_2`;
 
 #Para agregar algun personaje
@@ -75,3 +75,6 @@ BEGIN
     SET Nombre = unNombre
     WHERE idModoJuego = unIdModoJuego;
 END $$
+
+
+

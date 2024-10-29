@@ -21,4 +21,16 @@ public class UsuarioTest : TestBase
 
         Assert.NotEqual(5, diego.IdUsuario);
     }
+
+
+    [Fact]
+    public void ObtenerUsuario()
+    {
+
+        var usuario = Dao.ObtenerUsuario(4);
+
+        Assert.NotNull(usuario);
+        Assert.Equal(1, usuario.IdUsuario);
+    }
+    
 }

@@ -80,3 +80,15 @@ C:/Users/urano/Documents/Bloody_roar2/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/
 /mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/refint/Bloody_Roar_2.dll
 /mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/Bloody_Roar_2.pdb
 /mnt/Datos/Base-Datos/Bloody_Roar_2/obj/Debug/net8.0/ref/Bloody_Roar_2.dll
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\bin\Debug\net8.0\Bloody_Roar_2.deps.json
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\bin\Debug\net8.0\Bloody_Roar_2.dll
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\bin\Debug\net8.0\Bloody_Roar_2.pdb
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.AssemblyInfoInputs.cache
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.AssemblyInfo.cs
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.csproj.CoreCompileInputs.cache
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.sourcelink.json
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.dll
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\refint\Bloody_Roar_2.dll
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.pdb
+c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\ref\Bloody_Roar_2.dll

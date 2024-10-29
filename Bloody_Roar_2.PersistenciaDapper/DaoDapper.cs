@@ -20,8 +20,10 @@ public class DaoDapper : IDao
         parametros.Add("@unUltimoCombate", usuario.UltimoCombate);
 
         _conexion.Execute("AltaUsuario", parametros);
-    }
 
+        usuario.IdUsuario = parametros.Get<int>("@unIdUsuario");
+    }
+    
     public void AltaPersonaje(Personaje personaje)
     {
         var parametros = new DynamicParameters();
@@ -65,4 +67,10 @@ public class DaoDapper : IDao
         return combate;
     }
 
+    public Usuario? ObtenerUsuario(int IdUsuario)
+    {
+        var query = "SELECT * FROM Usuario WHERE IdUsuario = @IdUsuario";
+
+        return _conexion.QueryFirstOrDefault<Usuario>(query, new { IdUsuario });
+    }
 }

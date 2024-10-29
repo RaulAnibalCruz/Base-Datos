@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wKjxC15/diuxEMyXNsqb0EnzQf4dvzqdxeT0guSIjS7K10KJochdFo9nwZol6kcpvTBeF7vJsHp+udk6Loh0MQ==",
+  "dgSpecHash": "fp4Pd3on0m6ZeHLGMJ3nJG7nFNf6W6rl0O480Svs13+V9fhBtUE3k+h4LZQqhTtAgR3GNP3ArjO8Ov9zLFjHbA==",
   "success": true,
-  "projectFilePath": "/mnt/Datos/Base-Datos/Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj",
+  "projectFilePath": "C:\\Users\\urano\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj",
   "expectedPackageFiles": [
-    "/home/et12alumno/.nuget/packages/dapper/2.1.35/dapper.2.1.35.nupkg.sha512"
+    "C:\\Users\\urano\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512"
   ],
   "logs": []
 }
