@@ -16,4 +16,8 @@ public interface IDao
 
     Personaje? ObtenerPersonaje(int IdPersonaje);
 
+    ModoJuego? ObtenerModoJuego(int IdModoJuego);
+
+    Ataque? ObtenerAtaque(int IdAtaque);
+
 }

@@ -23,4 +23,11 @@ public class ModoJuegoTest : TestBase
         Dao.AltaModoJuego(arcade);
         Assert.NotEqual(0, arcade.IdModoJuego);
     }
+    [Fact]
+    public void ObtenerModoJuegoOK()
+    {
+        var modoJuego = Dao.ObtenerModoJuego(1);
+        Assert.NotNull(modoJuego);
+        Assert.Equal(1, modoJuego.IdModoJuego);
+    }
 }

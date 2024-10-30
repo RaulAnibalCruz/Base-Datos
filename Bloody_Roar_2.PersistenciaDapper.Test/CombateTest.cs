@@ -27,7 +27,7 @@ public class CombateTest : TestBase
         var combate = Dao.ObtenerCombatePorId(6);
 
         Assert.NotNull(combate);
-        Assert.Equal(0, combate.IdCombate);
+        Assert.Equal(6, combate.IdCombate);
     }
     [Fact]
     public void AltaCombateOk()

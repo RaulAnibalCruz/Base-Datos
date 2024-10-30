@@ -87,4 +87,14 @@ public class DaoDapper : IDao
         var query = "SELECT * FROM Personaje WHERE IdPersonaje = @IdPersonaje";
         return _conexion.QueryFirstOrDefault<Personaje>(query, new { IdPersonaje } );
     }
+    public ModoJuego? ObtenerModoJuego(int IdModoJuego)
+    {
+        var query = "SELECT * FROM ModoJuego WHERE IdModoJuego = @IdModoJuego";
+        return _conexion.QueryFirstOrDefault<ModoJuego>(query, new { IdModoJuego } );
+    }
+    public Ataque? ObtenerAtaque(int IdAtaque)
+    {
+        var query = "SELECT * FROM Ataque WHERE IdAtaque = @IdAtaque";
+        return _conexion.QueryFirstOrDefault<Ataque>(query, new { IdAtaque } );
+    }
 }

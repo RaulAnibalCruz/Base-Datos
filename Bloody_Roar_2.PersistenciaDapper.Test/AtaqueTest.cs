@@ -19,5 +19,13 @@ public class AtaqueTest : TestBase
         Dao.AltaAtaque(especial);
 
         Assert.NotEqual(5, especial.IdAtaque);
+    } 
+    
+    [Fact]
+    public void ObtenerAtaqueOK()
+    {
+        var ataque = Dao.ObtenerAtaque(1);
+        Assert.NotNull(ataque);
+        Assert.Equal(1, ataque.IdAtaque);
     }
 }
