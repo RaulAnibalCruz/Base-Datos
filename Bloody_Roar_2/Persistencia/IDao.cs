@@ -13,4 +13,6 @@ public interface IDao
     void AltaModoJuego(ModoJuego modoJuego);
     Usuario? ObtenerUsuario(int IdUsuario);
 
+    Personaje? ObtenerPersonaje(int IdPersonaje);
+
 }

@@ -26,13 +26,11 @@ public class CombateTest : TestBase
     [Fact]
     public void ObtenerCombatePorIdOK()
     {
-        // Supón que existe un combate con IdCombate = 1
-        int idCombate = 1;
 
         // Obtener el combate por su ID
-        var combate = Dao.ObtenerCombatePorId(idCombate);
+        var combate = Dao.ObtenerCombatePorId(1);
 
         Assert.NotNull(combate);
-        Assert.Equal(idCombate, combate.IdCombate);
+        Assert.Equal(1, combate.IdCombate);
     }
 }

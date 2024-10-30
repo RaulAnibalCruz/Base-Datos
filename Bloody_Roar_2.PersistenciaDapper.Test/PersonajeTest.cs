@@ -25,4 +25,13 @@ public class PersonajeTest : TestBase
         Dao.AltaPersonaje(yugo);
         Assert.NotEqual(0, yugo.IdPersonaje);
     }
+
+    [Fact]
+    public void ObtenerPersonaje()
+    {
+        var personaje = Dao.ObtenerPersonaje(8);
+        Assert.NotNull(personaje);
+        Assert.Equal(1, personaje.IdPersonaje);
+
+    }
 }

@@ -78,3 +78,4 @@ END $$
 
 
 
+SELECT * FROM combate

@@ -34,6 +34,7 @@ public class DaoDapper : IDao
         parametros.Add("@p_Ataques", personaje.ataques);
 
         _conexion.Execute("AltaPersonaje", parametros);
+        personaje.IdPersonaje = parametros.Get<int>("p_IdPersonaje");
     }
     public void AltaAtaque(Ataque ataque){
         var parametros = new DynamicParameters();
@@ -42,6 +43,7 @@ public class DaoDapper : IDao
         parametros.Add("@unDanio", ataque.Danio);
 
         _conexion.Execute("AltaAtaque", parametros);
+        ataque.IdAtaque = parametros.Get<int>("unIdAtaque");
     }
     public void AltaModoJuego(ModoJuego modoJuego){
         var parametros = new DynamicParameters();
@@ -49,28 +51,28 @@ public class DaoDapper : IDao
         parametros.Add("unNombre", modoJuego.Nombre);
 
         _conexion.Execute("AltaModoJuego", parametros);
+        modoJuego.IdModoJuego = parametros.Get<int>("unIdModoJuego");
     }
     public void ActualizarDuracionCombate(int idCombate, int nuevaDuracion)
     {
         var query = "UPDATE Combate SET Duracion = @NuevaDuracion WHERE IdCombate = @IdCombate";
-        
-        
         _conexion.Execute(query, new { NuevaDuracion = nuevaDuracion, IdCombate = idCombate });
     }
         public Combate ObtenerCombatePorId(int idCombate)
     {
         var query = "SELECT * FROM Combate WHERE IdCombate = @IdCombate";
+        return _conexion.QueryFirstOrDefault<Combate>(query, new { IdCombate = idCombate });
         
-        // Usamos QueryFirstOrDefault para devolver el primer resultado o null si no lo encuentra
-        var combate = _conexion.QueryFirstOrDefault<Combate>(query, new { IdCombate = idCombate });
-        
-        return combate;
     }
 
     public Usuario? ObtenerUsuario(int IdUsuario)
     {
         var query = "SELECT * FROM Usuario WHERE IdUsuario = @IdUsuario";
-
         return _conexion.QueryFirstOrDefault<Usuario>(query, new { IdUsuario });
+    }
+    public Personaje? ObtenerPersonaje(int IdPersonaje)
+    {
+        var query = "SELECT * FROM Personaje WHERE IdPersonaje = @IdPersonaje";
+        return _conexion.QueryFirstOrDefault<Personaje>(query, new { IdPersonaje } );
     }
 }
