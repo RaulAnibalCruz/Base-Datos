@@ -53,18 +53,30 @@ public class DaoDapper : IDao
         _conexion.Execute("AltaModoJuego", parametros);
         modoJuego.IdModoJuego = parametros.Get<int>("unIdModoJuego");
     }
+    public void AltaCombate(Combate combate)
+    {
+        var parametros = new DynamicParameters();
+        parametros.Add("p_idCombate", direction: ParameterDirection.Output);
+        parametros.Add("p_idPersonaje", combate.Personaje.IdPersonaje);
+        parametros.Add("p_idUsuario", combate.Usuario.IdUsuario);
+        parametros.Add("p_idModo_Juego", combate.ModoJuego.IdModoJuego);
+        parametros.Add("p_Duracion", combate.Duracion);
+
+        _conexion.Execute("AltaCombate", parametros);
+        combate.IdCombate = parametros.Get<int>("p_idCombate");
+
+    }
     public void ActualizarDuracionCombate(int idCombate, int nuevaDuracion)
     {
         var query = "UPDATE Combate SET Duracion = @NuevaDuracion WHERE IdCombate = @IdCombate";
         _conexion.Execute(query, new { NuevaDuracion = nuevaDuracion, IdCombate = idCombate });
     }
-        public Combate ObtenerCombatePorId(int idCombate)
+    public Combate? ObtenerCombatePorId(int idCombate)
     {
         var query = "SELECT * FROM Combate WHERE IdCombate = @IdCombate";
         return _conexion.QueryFirstOrDefault<Combate>(query, new { IdCombate = idCombate });
         
     }
-
     public Usuario? ObtenerUsuario(int IdUsuario)
     {
         var query = "SELECT * FROM Usuario WHERE IdUsuario = @IdUsuario";

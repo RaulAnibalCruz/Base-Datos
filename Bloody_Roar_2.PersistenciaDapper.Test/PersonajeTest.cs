@@ -27,7 +27,7 @@ public class PersonajeTest : TestBase
     }
 
     [Fact]
-    public void ObtenerPersonaje()
+    public void ObtenerPersonajeOK()
     {
         var personaje = Dao.ObtenerPersonaje(8);
         Assert.NotNull(personaje);

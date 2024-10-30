@@ -70,14 +70,13 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `5to_Bloody_Roar_2`.`Combate` (
   `idCombate` INT NOT NULL AUTO_INCREMENT,
   `idPersonaje` INT NOT NULL, 
-  `idJugador` INT NOT NULL,
+  `idUsuario` INT NOT NULL,
   `idModo_Juego` INT NOT NULL,
   `Duracion` INT NULL,
-  `Danio` INT NULL, -- Nueva columna para el daño
   PRIMARY KEY (`idCombate`),
-  CONSTRAINT `fk_Partida_1`
-    FOREIGN KEY (`idJugador`)
-    REFERENCES `5to_Bloody_Roar_2`.`Usuario` (`idUsuario`)
+  CONSTRAINT `fk_Partida_1` 
+    FOREIGN KEY (`idUsuario`) 
+    REFERENCES `usuario`(`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Partida_2`
@@ -92,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `5to_Bloody_Roar_2`.`Combate` (
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
 
-CREATE INDEX `fk_Partida_1_idx` ON `5to_Bloody_Roar_2`.`Combate` (`idJugador` ASC) VISIBLE;
+CREATE INDEX `fk_Partida_1_idx` ON `5to_Bloody_Roar_2`.`Combate` (`idUsuario` ASC) VISIBLE;
 
 
 CREATE INDEX `fk_Partida_2_idx` ON `5to_Bloody_Roar_2`.`Combate` (`idModo_Juego` ASC) VISIBLE;

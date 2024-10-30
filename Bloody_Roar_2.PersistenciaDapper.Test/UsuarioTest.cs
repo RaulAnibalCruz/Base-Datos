@@ -24,7 +24,7 @@ public class UsuarioTest : TestBase
 
 
     [Fact]
-    public void ObtenerUsuario()
+    public void ObtenerUsuarioOK()
     {
 
         var usuario = Dao.ObtenerUsuario(4);

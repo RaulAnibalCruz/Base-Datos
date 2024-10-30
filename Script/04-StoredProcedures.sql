@@ -40,7 +40,7 @@ DROP PROCEDURE IF EXISTS AltaCombate $$
 CREATE PROCEDURE AltaCombate(OUT p_idCombate INT, IN p_idPersonaje INT, IN p_idUsuario INT, IN p_idModo_Juego INT, IN p_Duracion INT)
 BEGIN
     INSERT INTO Combate (idPersonaje, idUsuario, idModo_Juego, Duracion)
-    VALUES (p_idCombate, p_idPersonaje, p_idUsuario, p_idModo_Juego, p_Duracion);
+    VALUES (p_idPersonaje, p_idUsuario, p_idModo_Juego, p_Duracion);
     SET p_idCombate = LAST_INSERT_ID();
 END $$
 
@@ -78,4 +78,8 @@ END $$
 
 
 
-SELECT * FROM combate
+SELECT * FROM com
+
+SHOW COLUMNS FROM usuario;
+
+

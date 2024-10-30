@@ -11,6 +11,7 @@ public interface IDao
     void AltaAtaque(Ataque ataque);
 
     void AltaModoJuego(ModoJuego modoJuego);
+    void AltaCombate(Combate combate);
     Usuario? ObtenerUsuario(int IdUsuario);
 
     Personaje? ObtenerPersonaje(int IdPersonaje);
