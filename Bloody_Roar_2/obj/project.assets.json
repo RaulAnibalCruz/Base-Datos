@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\urano\\.nuget\\packages\\": {}
+    "/home/et12alumno/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\urano\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj",
+      "projectUniqueName": "/mnt/Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj",
       "projectName": "Bloody_Roar_2",
-      "projectPath": "C:\\Users\\urano\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj",
-      "packagesPath": "C:\\Users\\urano\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\urano\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2\\obj\\",
+      "projectPath": "/mnt/Datos/Base-Datos/Bloody_Roar_2/Bloody_Roar_2.csproj",
+      "packagesPath": "/home/et12alumno/.nuget/packages/",
+      "outputPath": "/mnt/Datos/Base-Datos/Bloody_Roar_2/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\urano\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/et12alumno/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,11 +38,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -64,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
