@@ -83,9 +83,9 @@ Reemplaza usuario por el nombre de usuario de tu base de datos.
 Si estás en la computadora de la escuela, puedes usar el siguiente comando:
 bash
 Copiar código
-´´´
+```
 mysql -u root -p
-´´´
+```
 Se te pedirá la contraseña de tu usuario. En el entorno escolar, la contraseña por defecto suele ser root.
 Ejecutar el script SQL: Una vez dentro del cliente de MySQL (verás algo como mysql> en la terminal), ingresa el siguiente comando para ejecutar el script:
 
