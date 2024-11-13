@@ -63,8 +63,52 @@ git clone https://github.com/giovanni-mendez/Base-Datos.git
 
 ## Requisitos 
 - .NET 8.0 SDK
-- MySQL 8 
+- MySQL 8
 
+## Instrucciones para ejecutar los scripts SQL
+Requisitos previos
+Antes de comenzar, asegúrate de tener MySQL instalado y configurado en tu computadora. Para simplificar el proceso, te recomendamos agregar MySQL a las variables de entorno de tu sistema. Esto te permitirá ejecutar comandos de MySQL desde cualquier ubicación en la terminal.
+
+## Pasos para ejecutar los scripts
+Abrir la terminal en el directorio correcto: Dirígete al directorio donde están ubicados los archivos SQL usando la terminal.
+
+Ingresar a MySQL: Ejecuta el siguiente comando para iniciar sesión en MySQL:
+
+bash
+Copiar código
+```
+mysql -u usuario -p
+```
+Reemplaza usuario por el nombre de usuario de tu base de datos.
+Si estás en la computadora de la escuela, puedes usar el siguiente comando:
+bash
+Copiar código
+```
+mysql -u root -p
+```
+Se te pedirá la contraseña de tu usuario. En el entorno escolar, la contraseña por defecto suele ser root.
+Ejecutar el script SQL: Una vez dentro del cliente de MySQL (verás algo como mysql> en la terminal), ingresa el siguiente comando para ejecutar el script:
+
+sql
+Copiar código
+```
+source install.sql;
+```
+Este comando cargará y ejecutará el archivo install.sql, que contiene las instrucciones para crear la base de datos, tablas y otros objetos.
+Salir de MySQL: Cuando finalice la ejecución del script, puedes salir del cliente de MySQL escribiendo:
+
+bash
+Copiar código
+exit
+Ejemplo de ejecución
+bash
+Copiar código
+```
+$ mysql -u root -p
+Enter password: ******
+mysql> source Install.sql;
+mysql> exit
+```
 
 ## Integrantes del Proyecto:
 
