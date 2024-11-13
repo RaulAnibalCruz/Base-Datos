@@ -78,8 +78,3 @@ END $$
 
 
 
-SELECT * FROM com
-
-SHOW COLUMNS FROM usuario;
-
-
