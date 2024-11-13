@@ -76,9 +76,9 @@ Ingresar a MySQL: Ejecuta el siguiente comando para iniciar sesión en MySQL:
 
 bash
 Copiar código
-´´´
+```
 mysql -u usuario -p
-´´´
+```
 Reemplaza usuario por el nombre de usuario de tu base de datos.
 Si estás en la computadora de la escuela, puedes usar el siguiente comando:
 bash
@@ -91,9 +91,9 @@ Ejecutar el script SQL: Una vez dentro del cliente de MySQL (verás algo como my
 
 sql
 Copiar código
-´´´
+```
 source install.sql;
-´´´
+```
 Este comando cargará y ejecutará el archivo install.sql, que contiene las instrucciones para crear la base de datos, tablas y otros objetos.
 Salir de MySQL: Cuando finalice la ejecución del script, puedes salir del cliente de MySQL escribiendo:
 
@@ -103,12 +103,12 @@ exit
 Ejemplo de ejecución
 bash
 Copiar código
-´´´
+```
 $ mysql -u root -p
 Enter password: ******
 mysql> source Install.sql;
 mysql> exit
-´´´
+```
 
 ## Integrantes del Proyecto:
 
