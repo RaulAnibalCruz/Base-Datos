@@ -92,3 +92,15 @@ c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody
 c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\refint\Bloody_Roar_2.dll
 c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.pdb
 c:\Users\urano\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\ref\Bloody_Roar_2.dll
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\bin\Debug\net8.0\Bloody_Roar_2.deps.json
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\bin\Debug\net8.0\Bloody_Roar_2.dll
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\bin\Debug\net8.0\Bloody_Roar_2.pdb
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.AssemblyInfoInputs.cache
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.AssemblyInfo.cs
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.csproj.CoreCompileInputs.cache
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.sourcelink.json
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.dll
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\refint\Bloody_Roar_2.dll
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\Bloody_Roar_2.pdb
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\Bloody_Roar_2\obj\Debug\net8.0\ref\Bloody_Roar_2.dll
