@@ -1,8 +1,10 @@
 namespace Bloody_Roar_2.PersistenciaDapper.Test;
 
+using Bloody_Roar_2.PersistenciaDapper;
+using Bloody_Roar_2.Persistencia;
 public class AtaqueTest : TestBase
 {
-    public AtaqueTest() : base()
+     public AtaqueTest() : base()
     {
 
     }
@@ -19,12 +21,15 @@ public class AtaqueTest : TestBase
         Dao.AltaAtaque(especial);
 
         Assert.NotEqual(5, especial.IdAtaque);
-    } 
+    }
+
+
+   [Fact]
+    public async Task ObtenerAtaqueOK()
     
-    [Fact]
-    public void ObtenerAtaqueOK()
     {
-        var ataque = Dao.ObtenerAtaque(1);
+    
+        var ataque =  await Dao.ObtenerAtaque(1);
         Assert.NotNull(ataque);
         Assert.Equal(1, ataque.IdAtaque);
     }

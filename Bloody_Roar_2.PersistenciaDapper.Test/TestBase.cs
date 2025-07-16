@@ -17,6 +17,6 @@ public abstract class TestBase
         string cadena = config.GetConnectionString("MySQL")!;
         _conexion = new MySqlConnection(cadena);
 
-        Dao = new DaoDapper(_conexion);
+        Dao = new DaoDapperasyng(_conexion);
     }
 }

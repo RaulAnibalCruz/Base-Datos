@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
 namespace Bloody_Roar_2.PersistenciaDapper.Test;
 
+using Bloody_Roar_2.PersistenciaDapper;
+using Bloody_Roar_2.Persistencia;
 public class ModoJuegoTest : TestBase
 {
     public ModoJuegoTest() : base()
@@ -24,10 +20,10 @@ public class ModoJuegoTest : TestBase
         Assert.NotEqual(0, arcade.IdModoJuego);
     }
     [Fact]
-    public void ObtenerModoJuegoOK()
+    public async Task ObtenerModoJuegoOK()
     {
-        var modoJuego = Dao.ObtenerModoJuego(1);
+        var modoJuego = await Dao.ObtenerModoJuego(1); 
         Assert.NotNull(modoJuego);
-        Assert.Equal(1, modoJuego.IdModoJuego);
+        Assert.Equal(1, modoJuego!.IdModoJuego); 
     }
 }

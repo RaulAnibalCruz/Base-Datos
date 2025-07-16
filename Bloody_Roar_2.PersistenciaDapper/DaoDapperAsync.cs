@@ -6,29 +6,63 @@ namespace Bloody_Roar_2.PersistenciaDapper;
 
 public class DaoDapperasyng : IDao
 {
-    public Task ActualizarDuracionCombate(int idCombate, int nuevaDuracion)
+    
+    private readonly IDbConnection _conexion;
+
+    public DaoDapperasyng(IDbConnection conexion)
+        => _conexion = conexion;
+
+    public async Task ActualizarDuracionCombate(int idCombate, int nuevaDuracion)
     {
-        throw new NotImplementedException();
+        var query = "UPDATE Combate SET Duracion = @NuevaDuracion WHERE IdCombate = @IdCombate";
+        await _conexion.ExecuteAsync(query, new { NuevaDuracion = nuevaDuracion, IdCombate = idCombate });
     }
 
-    public Task AltaAtaque(Ataque ataque)
+    public async Task AltaAtaque(Ataque ataque)
     {
-        throw new NotImplementedException();
+    var parametros = new DynamicParameters();
+        parametros.Add("@unIdAtaque", direction: ParameterDirection.Output);
+        parametros.Add("@unTipoAtaque", ataque.TipoAtaque);
+        parametros.Add("@unDanio", ataque.Danio);
+
+        await _conexion.ExecuteAsync("AltaAtaque", parametros);
+        ataque.IdAtaque = parametros.Get<int>("unIdAtaque");
     }
 
-    public Task AltaCombate(Combate combate)
+    public async Task AltaCombate(Combate combate)
     {
-        throw new NotImplementedException();
+    var parametros = new DynamicParameters();
+        parametros.Add("p_idCombate", direction: ParameterDirection.Output);
+        parametros.Add("p_idPersonaje", combate.Personaje.IdPersonaje);
+        parametros.Add("p_idUsuario", combate.Usuario.IdUsuario);
+        parametros.Add("p_idModo_Juego", combate.ModoJuego.IdModoJuego);
+        parametros.Add("p_Duracion", combate.Duracion);
+
+    await _conexion.ExecuteAsync("AltaCombate", parametros);
+        combate.IdCombate = parametros.Get<int>("p_idCombate");
     }
 
-    public Task AltaModoJuego(ModoJuego modoJuego)
+    public async Task AltaModoJuego(ModoJuego modoJuego)
     {
-        throw new NotImplementedException();
+    var parametros = new DynamicParameters();
+        parametros.Add("@unIdModoJuego", direction: ParameterDirection.Output);
+        parametros.Add("unNombre", modoJuego.Nombre);
+
+    await _conexion.ExecuteAsync("AltaModoJuego", parametros);
+        modoJuego.IdModoJuego = parametros.Get<int>("unIdModoJuego");
     }
 
-    public Task AltaPersonaje(Personaje personaje)
+    public async  Task AltaPersonaje(Personaje personaje)
     {
-        throw new NotImplementedException();
+        var parametros = new DynamicParameters();
+        parametros.Add("@p_IdPersonaje", direction: ParameterDirection.Output);
+        parametros.Add("@p_Nombre", personaje.Nombre);
+        parametros.Add("@p_NombreBestia", personaje.NombreBestia);
+        parametros.Add("@p_ResistenciaBestia", personaje.ResistenciaBestia);
+        parametros.Add("@p_Ataques", personaje.ataques);
+
+    await _conexion.ExecuteAsync("AltaPersonaje", parametros);
+        personaje.IdPersonaje = parametros.Get<int>("p_IdPersonaje");
     }
 
     public async Task AltaUsuario (Usuario usuario)
@@ -40,33 +74,43 @@ public class DaoDapperasyng : IDao
         parametros.Add("@unEmail", usuario.Email);
         parametros.Add("@unUltimoCombate", usuario.UltimoCombate);
 
-        await _conexion.ExecuteAsing("AltaUsuario", parametros);
+        await _conexion.ExecuteAsync("AltaUsuario", parametros);
 
         usuario.IdUsuario = parametros.Get<int>("@unIdUsuario");
     }
 
-    public Task<Ataque?> ObtenerAtaque(int IdAtaque)
+    public async Task<Ataque?> ObtenerAtaque(int IdAtaque)
     {
-        throw new NotImplementedException();
+        var query = "SELECT * FROM Ataque WHERE IdAtaque = @IdAtaque";
+        return await _conexion.QueryFirstOrDefaultAsync<Ataque>(query, new { IdAtaque } );
     }
 
-    public Task <Combate?> ObtenerCombatePorId(int idCombate)
+    public async Task <Combate?> ObtenerCombatePorId(int idCombate)
     {
-        throw new NotImplementedException();
+      var query = "SELECT * FROM Combate WHERE IdCombate = @IdCombate";
+        return await _conexion.QueryFirstOrDefaultAsync<Combate>(query, new { IdCombate = idCombate });
+        
     }
 
-    public Task <ModoJuego?> ObtenerModoJuego(int IdModoJuego)
+    public async Task <ModoJuego?> ObtenerModoJuego(int IdModoJuego)
     {
-        throw new NotImplementedException();
+       var query = "SELECT * FROM ModoJuego WHERE IdModoJuego = @IdModoJuego";
+        return await _conexion.QueryFirstOrDefaultAsync<ModoJuego>(query, new { IdModoJuego } );
     }
 
-    public Task <Personaje?> ObtenerPersonaje(int IdPersonaje)
+    public async Task <Personaje?> ObtenerPersonaje(int IdPersonaje)
     {
-        throw new NotImplementedException();
+      var query = "SELECT * FROM Personaje WHERE IdPersonaje = @IdPersonaje";
+        return await _conexion.QueryFirstOrDefaultAsync<Personaje>(query, new { IdPersonaje } );
     }
 
-    public Task <Usuario?> ObtenerUsuario(int IdUsuario)
+    public async Task <Usuario?> ObtenerUsuario(int IdUsuario)
     {
-        throw new NotImplementedException();
+                var query = "SELECT * FROM Usuario WHERE IdUsuario = @IdUsuario";
+        return await _conexion.QueryFirstOrDefaultAsync<Usuario>(query, new { IdUsuario });
     }
+}
+
+internal class _conexion
+{
 }

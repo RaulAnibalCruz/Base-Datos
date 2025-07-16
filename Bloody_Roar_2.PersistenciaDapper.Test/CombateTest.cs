@@ -1,3 +1,6 @@
+using Bloody_Roar_2;
+using Bloody_Roar_2.PersistenciaDapper;
+using Bloody_Roar_2.Persistencia;
 namespace Bloody_Roar_2.PersistenciaDapper.Test;
 
 public class CombateTest : TestBase
@@ -17,14 +20,14 @@ public class CombateTest : TestBase
             Dao.ActualizarDuracionCombate(6, nuevaDuracion);
 
             // Opcional: Recuperar el combate para verificar la actualización (si tienes un método para eso)
-            var combateActualizado = Dao.ObtenerCombatePorId(6); 
+            var combateActualizado = Dao.ObtenerCombatePorId(6);
 
         }
     }
     [Fact]
-    public void ObtenerCombatePorIdOK()
+    public   async Task ObtenerCombatePorIdOK()
     {
-        var combate = Dao.ObtenerCombatePorId(6);
+        var combate = await Dao.ObtenerCombatePorId(6);
 
         Assert.NotNull(combate);
         Assert.Equal(6, combate.IdCombate);

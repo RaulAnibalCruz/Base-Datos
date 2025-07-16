@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
+using Bloody_Roar_2.PersistenciaDapper;
+using Bloody_Roar_2.Persistencia;
 namespace Bloody_Roar_2.PersistenciaDapper.Test;
-
 public class PersonajeTest : TestBase
 {
     public PersonajeTest() : base()
@@ -27,9 +28,9 @@ public class PersonajeTest : TestBase
     }
 
     [Fact]
-    public void ObtenerPersonajeOK()
+    public async Task ObtenerPersonajeOK()
     {
-        var personaje = Dao.ObtenerPersonaje(8);
+        var personaje = await Dao.ObtenerPersonaje(8);
         Assert.NotNull(personaje);
         Assert.Equal(1, personaje.IdPersonaje);
 

@@ -4,20 +4,20 @@ namespace Bloody_Roar_2.Persistencia;
 
 public interface IDao
 {
-    void ActualizarDuracionCombate(int idCombate, int nuevaDuracion);
-    void AltaPersonaje(Personaje personaje);
-    void AltaUsuario(Usuario usuario);
-    Combate? ObtenerCombatePorId(int idCombate);
-    void AltaAtaque(Ataque ataque);
+    Task ActualizarDuracionCombate(int idCombate, int nuevaDuracion);
+    Task AltaPersonaje(Personaje personaje);
+    Task AltaUsuario(Usuario usuario);
+    Task <Combate?> ObtenerCombatePorId(int idCombate);
+    Task AltaAtaque(Ataque ataque);
 
-    void AltaModoJuego(ModoJuego modoJuego);
-    void AltaCombate(Combate combate);
-    Usuario? ObtenerUsuario(int IdUsuario);
+    Task AltaModoJuego(ModoJuego modoJuego);
+    Task AltaCombate(Combate combate);
+    Task <Usuario?> ObtenerUsuario(int IdUsuario);
 
-    Personaje? ObtenerPersonaje(int IdPersonaje);
+    Task <Personaje?> ObtenerPersonaje(int IdPersonaje);
 
-    ModoJuego? ObtenerModoJuego(int IdModoJuego);
+    Task <ModoJuego?> ObtenerModoJuego(int IdModoJuego);
 
-    Ataque? ObtenerAtaque(int IdAtaque);
+    Task <Ataque?> ObtenerAtaque(int IdAtaque);
 
 }
