@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Bloody_Roar_2.PersistenciaDapper.Test")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("MinimalAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53d8ccdfbd7bce64a59aa0b1e1e3af95f1ee2fc6")]
-[assembly: System.Reflection.AssemblyProductAttribute("Bloody_Roar_2.PersistenciaDapper.Test")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Bloody_Roar_2.PersistenciaDapper.Test")]
+[assembly: System.Reflection.AssemblyProductAttribute("MinimalAPI")]
+[assembly: System.Reflection.AssemblyTitleAttribute("MinimalAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

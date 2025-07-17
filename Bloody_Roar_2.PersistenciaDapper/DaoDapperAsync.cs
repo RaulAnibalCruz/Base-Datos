@@ -2,20 +2,21 @@ using System.Data;
 using Dapper;
 using Bloody_Roar_2.Persistencia;
 
+
 namespace Bloody_Roar_2.PersistenciaDapper;
 
-public class DaoDapperasyng : IDao
+public class DaoDapperAsync : IDao
 {
     
     private readonly IDbConnection _conexion;
 
-    public DaoDapperasyng(IDbConnection conexion)
+    public DaoDapperAsync (IDbConnection conexion)
         => _conexion = conexion;
 
     public async Task ActualizarDuracionCombate(int idCombate, int nuevaDuracion)
     {
         var query = "UPDATE Combate SET Duracion = @NuevaDuracion WHERE IdCombate = @IdCombate";
-        await _conexion.ExecuteAsync(query, new { NuevaDuracion = nuevaDuracion, IdCombate = idCombate });
+        await _conexion.ExecuteAsync (query, new { NuevaDuracion = nuevaDuracion, IdCombate = idCombate });
     }
 
     public async Task AltaAtaque(Ataque ataque)
@@ -79,6 +80,12 @@ public class DaoDapperasyng : IDao
         usuario.IdUsuario = parametros.Get<int>("@unIdUsuario");
     }
 
+    public async Task<Usuario?> EliminarUsuario(int idUsuario)
+    {
+    string sql = "DELETE FROM Usuario WHERE IdUsuario = @IdUsuario";
+    await  _conexion.QueryFirstOrDefaultAsync<Usuario>(sql, new { IdUsuario = idUsuario });
+    }
+
     public async Task<Ataque?> ObtenerAtaque(int IdAtaque)
     {
         var query = "SELECT * FROM Ataque WHERE IdAtaque = @IdAtaque";
@@ -109,6 +116,9 @@ public class DaoDapperasyng : IDao
                 var query = "SELECT * FROM Usuario WHERE IdUsuario = @IdUsuario";
         return await _conexion.QueryFirstOrDefaultAsync<Usuario>(query, new { IdUsuario });
     }
+
+
+
 }
 
 internal class _conexion

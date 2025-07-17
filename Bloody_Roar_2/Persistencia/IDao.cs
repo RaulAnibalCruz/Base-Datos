@@ -20,4 +20,6 @@ public interface IDao
 
     Task <Ataque?> ObtenerAtaque(int IdAtaque);
 
+    Task <Usuario?> EliminarUsuario (int idUsuario);
+
 }
