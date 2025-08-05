@@ -80,11 +80,6 @@ public class DaoDapperAsync : IDao
         usuario.IdUsuario = parametros.Get<int>("@unIdUsuario");
     }
 
-    public async Task<Usuario?> EliminarUsuario(int idUsuario)
-    {
-    string sql = "DELETE FROM Usuario WHERE IdUsuario = @IdUsuario";
-    await  _conexion.QueryFirstOrDefaultAsync<Usuario>(sql, new { IdUsuario = idUsuario });
-    }
 
     public async Task<Ataque?> ObtenerAtaque(int IdAtaque)
     {

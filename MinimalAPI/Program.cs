@@ -30,24 +30,17 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
-app.MapGet("/personajes", async (IDao repo) =>
-    await repo.ObtenerPersonaje());
+app.MapGet("/personajes/id", async (IDao repo,int id) =>
+    await repo.ObtenerPersonaje(id));
 
-app.MapPatch("/combate/Actu",  (IDao repo) =>
-    repo.ActualizarDuracionCombate()); 
+app.MapPatch("/combate/Actu/id",  (IDao repo, int id) =>
+    repo.ActualizarDuracionCombate(id)); 
+
+app.Run();
 
 
-app.MapDelete("/usuario/Dele", async (int id, IDao repo) =>
-{
-    if (await repo.ObtenerUsuario(id) is Usuario usuario)
-    {
-        await repo.EliminarUsuario(idUsuario);
-        return Results.NoContent();
-    }
 
-    return Results.NotFound();
-}
-);
+
 
 
 

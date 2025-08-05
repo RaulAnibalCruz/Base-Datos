@@ -76,13 +76,3 @@ BEGIN
     WHERE idModoJuego = unIdModoJuego;
 END $$
 
-DELIMITER $$
-DROP PROCEDURE if EXISTS EliminarUsuario $$
-CREATE PROCEDURE EliminarUsuario
-    @IdUsuario INT
-AS
-BEGIN
-    DELETE FROM Usuario
-    WHERE IdUsuario = @IdUsuario
-END $$
-
