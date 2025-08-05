@@ -1104,7 +1104,7 @@
         "runtime": {
           "lib/netstandard2.0/xunit.abstractions.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.0.0.0"
           }
         }
       },
@@ -1153,7 +1153,10 @@
       "xunit.runner.visualstudio/2.4.5": {},
       "Bloody_Roar_2/1.0.0": {
         "runtime": {
-          "Bloody_Roar_2.dll": {}
+          "Bloody_Roar_2.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Bloody_Roar_2.PersistenciaDapper/1.0.0": {
@@ -1162,7 +1165,10 @@
           "Dapper": "2.1.35"
         },
         "runtime": {
-          "Bloody_Roar_2.PersistenciaDapper.dll": {}
+          "Bloody_Roar_2.PersistenciaDapper.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

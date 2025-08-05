@@ -5,8 +5,6 @@ using Bloody_Roar_2.PersistenciaDapper;
 using Scalar.AspNetCore;
 using Bloody_Roar_2;
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("MySQL");
@@ -30,11 +28,14 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
-app.MapGet("/personajes/id", async (IDao repo,int id) =>
-    await repo.ObtenerPersonaje(id));
+app.MapGet("/personajes/id", async (IDao repo,int IdPersonaje) =>
+    await repo.ObtenerPersonaje(IdPersonaje));
 
-app.MapPatch("/combate/Actu/id",  (IDao repo, int id) =>
-    repo.ActualizarDuracionCombate(id)); 
+//app.MapPatch("/combate/Actu/id",  (IDao repo, int id) =>
+//   repo.ActualizarDuracionCombate(id)); 
+
+
+
 
 app.Run();
 
