@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9BvOktvzWI4=",
+  "dgSpecHash": "lM31Nksr3GM=",
   "success": true,
-  "projectFilePath": "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj",
+  "projectFilePath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lab15-PC01\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512"
   ],

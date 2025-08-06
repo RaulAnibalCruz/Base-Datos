@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj": {
-                "projectPath": "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj"
+              "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj": {
+                "projectPath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj"
               },
               "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj": {
                 "projectPath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj"
@@ -111,14 +111,14 @@
         }
       }
     },
-    "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj": {
+    "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj",
+        "projectUniqueName": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj",
         "projectName": "Bloody_Roar_2.PersistenciaDapper",
-        "projectPath": "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj",
+        "projectPath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj",
         "packagesPath": "C:\\Users\\Lab15-PC01\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\obj\\",
+        "outputPath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

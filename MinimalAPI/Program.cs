@@ -31,10 +31,23 @@ if (app.Environment.IsDevelopment())
 app.MapGet("/personajes/id", async (IDao repo,int IdPersonaje) =>
     await repo.ObtenerPersonaje(IdPersonaje));
 
+app.MapGet("/Usuario/{id}", async (int idUsuario, IDao repo) =>
+    await repo.ObtenerUsuario(idUsuario)
+        is Usuario usuario
+            ? Results.Ok(usuario)
+            : Results.NotFound());
+
+
 //app.MapPatch("/combate/Actu/id",  (IDao repo, int id) =>
 //   repo.ActualizarDuracionCombate(id)); 
 
+app.MapPost("/NewPersonaje", (IDao repo , Personaje personaje ) =>
+{
+    var id = repo.AltaPersonaje(personaje);
+    return Results.Created($"/NewPersonaje/{id}", personaje);
+});
 
+app.MapPost
 
 
 app.Run();
