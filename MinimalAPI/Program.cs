@@ -47,7 +47,13 @@ app.MapPost("/NewPersonaje", (IDao repo , Personaje personaje ) =>
     return Results.Created($"/NewPersonaje/{id}", personaje);
 });
 
-app.MapPost
+app.MapPost("/NewUsuario", async (Usuario usuario, IDao repo) =>
+{
+    await repo.AltaUsuario(usuario);
+
+    return Results.Created($"/NewUsuario/{usuario}", usuario);
+});
+
 
 
 app.Run();
