@@ -28,33 +28,38 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
-app.MapGet("/personajes/id", async (IDao repo,int IdPersonaje) =>
+app.MapGet("/personaje/{IdPersonaje}", async (IDao repo,int IdPersonaje) =>
     await repo.ObtenerPersonaje(IdPersonaje));
 
-app.MapGet("/Usuario/{id}", async (int idUsuario, IDao repo) =>
-    await repo.ObtenerUsuario(idUsuario)
-        is Usuario usuario
-            ? Results.Ok(usuario)
-            : Results.NotFound());
+
+app.MapGet("/Usuario/{IdUsuario}", async (IDao repo,int IdUsuario) =>
+    await repo.ObtenerUsuario(IdUsuario));
 
 
-//app.MapPatch("/combate/Actu/id",  (IDao repo, int id) =>
-//   repo.ActualizarDuracionCombate(id)); 
-
-app.MapPost("/NewPersonaje", (IDao repo , Personaje personaje ) =>
+app.MapPost("/NewPersonaje", async (IDao repo , Personaje personaje ) =>
 {
-    var id = repo.AltaPersonaje(personaje);
-    return Results.Created($"/NewPersonaje/{id}", personaje);
+    await repo.AltaPersonaje(personaje);
+    return Results.Created($"/NewPersonaje/{personaje.IdPersonaje}", personaje);
 });
 
-app.MapPost("/NewUsuario", async (Usuario usuario, IDao repo) =>
+app.MapPost("/NewUsuario", async (IDao repo,Usuario usuario ) =>
 {
     await repo.AltaUsuario(usuario);
 
-    return Results.Created($"/NewUsuario/{usuario}", usuario);
+    return Results.Created($"/NewUsuario/{usuario.IdUsuario}",usuario);
 });
 
+app.MapGet("/TodoPersonaje", async (IDao repo) =>
+{
+    var lista = await repo.ObtenerTodoPersonaje();
+    return Results.Ok(lista);
+});
 
+app.MapGet("/TodoUsuario", async (IDao repo ) =>
+{
+    var lista = await repo.ObtenerTodoUsuario();
+    return Results.Ok(lista);
+});
 
 app.Run();
 
