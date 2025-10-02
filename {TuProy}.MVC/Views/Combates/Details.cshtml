@@ -1,0 +1,11 @@
+@model Bloody_Roar_2.Combate
+
+<h2>Detalles del Combate</h2>
+
+<p><b>Id:</b> @Model.IdCombate</p>
+<p><b>Personaje:</b> @Model.Personaje?.Nombre</p>
+<p><b>Modo de Juego:</b> @Model.ModoJuego?.Nombre</p>
+<p><b>Duración:</b> @Model.Duracion minutos</p>
+
+<a asp-action="Create">Nuevo Combate</a> | <a asp-action="Index">Volver</a>
+

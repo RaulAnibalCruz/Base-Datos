@@ -1,11 +1,84 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Dapper/2.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Bloody_Roar_2/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Bloody_Roar_2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bloody_Roar_2.dll": {}
+        }
+      },
+      "Bloody_Roar_2.PersistenciaDapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Bloody_Roar_2": "1.0.0",
+          "Dapper": "2.1.35"
+        },
+        "compile": {
+          "bin/placeholder/Bloody_Roar_2.PersistenciaDapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bloody_Roar_2.PersistenciaDapper.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Dapper/2.1.35": {
+      "sha512": "YKRwjVfrG7GYOovlGyQoMvr1/IJdn+7QzNXJxyMh0YfFF5yvDmTYaJOVYWsckreNjGsGSEtrMTpnzxTUq/tZQw==",
+      "type": "package",
+      "path": "dapper/2.1.35",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.1.35.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/net7.0/Dapper.dll",
+        "lib/net7.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml",
+        "readme.md"
+      ]
+    },
+    "Bloody_Roar_2/1.0.0": {
+      "type": "project",
+      "path": "../Bloody_Roar_2/Bloody_Roar_2.csproj",
+      "msbuildProject": "../Bloody_Roar_2/Bloody_Roar_2.csproj"
+    },
+    "Bloody_Roar_2.PersistenciaDapper/1.0.0": {
+      "type": "project",
+      "path": "../Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj",
+      "msbuildProject": "../Bloody_Roar_2.PersistenciaDapper/Bloody_Roar_2.PersistenciaDapper.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Bloody_Roar_2 >= 1.0.0",
+      "Bloody_Roar_2.PersistenciaDapper >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Lab15-PC01\\.nuget\\packages\\": {},
@@ -39,7 +112,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj": {
+              "projectPath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2.PersistenciaDapper\\Bloody_Roar_2.PersistenciaDapper.csproj"
+            },
+            "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj": {
+              "projectPath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
