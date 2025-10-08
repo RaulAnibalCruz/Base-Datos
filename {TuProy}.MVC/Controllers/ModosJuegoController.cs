@@ -6,7 +6,6 @@ using Bloody_Roar_2.Persistencia;
 
 namespace _TuProy_.MVC.Controllers
 
-
 {
     public class ModosJuegoController : Controller
     {
@@ -19,25 +18,21 @@ namespace _TuProy_.MVC.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var modos = await _dao.ObtenerModoJuego(1); // o un método que traiga todos
+            var modos = await _dao.ObtenerTodoModoJuego();
             return View(modos);
         }
 
-        public IActionResult Create()
+        public IActionResult Crear()
         {
             return View();
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ModoJuego modoJuego)
+        public async Task<IActionResult> Crear(ModoJuego modo)
         {
-            if (ModelState.IsValid)
-            {
-                await _dao.AltaModoJuego(modoJuego);
-                return RedirectToAction(nameof(Index));
-            }
-            return View(modoJuego);
+            await _dao.AltaModoJuego(modo);
+            return RedirectToAction("Index");
         }
     }
 }
+

@@ -16,38 +16,22 @@ namespace _TuProy_.MVC.Controllers
             _dao = dao;
         }
 
-        // GET: /Personajes
         public async Task<IActionResult> Index()
         {
             var personajes = await _dao.ObtenerTodoPersonaje();
             return View(personajes);
         }
 
-        // GET: /Personajes/Details/5
-        public async Task<IActionResult> Details(int id)
-        {
-            var personaje = await _dao.ObtenerPersonaje(id);
-            if (personaje == null) return NotFound();
-            return View(personaje);
-        }
-
-        // GET: /Personajes/Create
-        public IActionResult Create()
+        public IActionResult Crear()
         {
             return View();
         }
 
-        // POST: /Personajes/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Personaje personaje)
+        public async Task<IActionResult> Crear(Personaje personaje)
         {
-            if (ModelState.IsValid)
-            {
-                await _dao.AltaPersonaje(personaje);
-                return RedirectToAction(nameof(Index));
-            }
-            return View(personaje);
+            await _dao.AltaPersonaje(personaje);
+            return RedirectToAction("Index");
         }
     }
 }

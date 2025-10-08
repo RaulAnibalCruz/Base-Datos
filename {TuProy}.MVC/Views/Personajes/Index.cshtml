@@ -1,31 +1,28 @@
 @model IEnumerable<Bloody_Roar_2.Personaje>
 
 <h2>Lista de Personajes</h2>
+<a class="btn btn-primary mb-3" href="/Personajes/Crear">Dar de Alta Personaje</a>
 
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Id</th>
             <th>Nombre</th>
             <th>Nombre Bestia</th>
-            <th>Resistencia Bestia</th>
-            <th></th>
+            <th>Resistencia</th>
         </tr>
     </thead>
     <tbody>
-    @foreach (var personaje in Model)
-    {
-        <tr>
-            <td>@personaje.IdPersonaje</td>
-            <td>@personaje.Nombre</td>
-            <td>@personaje.NombreBestia</td>
-            <td>@personaje.ResistenciaBestia</td>
-            <td>
-                <a asp-action="Details" asp-route-id="@personaje.IdPersonaje">Detalles</a>
-            </td>
-        </tr>
-    }
+        @foreach(var p in Model)
+        {
+            <tr>
+                <td>@p.IdPersonaje</td>
+                <td>@p.Nombre</td>
+                <td>@p.NombreBestia</td>
+                <td>@p.ResistenciaBestia</td>
+            </tr>
+        }
     </tbody>
 </table>
 
-<a asp-action="Create" class="btn btn-primary">Crear nuevo personaje</a>
+<a class="btn btn-secondary mt-3" href="/Home/Index">Volver a Inicio</a>

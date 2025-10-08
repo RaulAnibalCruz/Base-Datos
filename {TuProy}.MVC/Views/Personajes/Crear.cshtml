@@ -1,0 +1,21 @@
+@model Bloody_Roar_2.Personaje
+
+<h2>Crear Personaje</h2>
+
+<form asp-action="Crear" method="post">
+    <div class="mb-3">
+        <label asp-for="Nombre" class="form-label"></label>
+        <input asp-for="Nombre" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="NombreBestia" class="form-label"></label>
+        <input asp-for="NombreBestia" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ResistenciaBestia" class="form-label"></label>
+        <input asp-for="ResistenciaBestia" class="form-control"/>
+    </div>
+    <button type="submit" class="btn btn-success">Crear</button>
+</form>
+
+<a class="btn btn-secondary mt-3" href="/Personajes/Index">Volver a Lista</a>

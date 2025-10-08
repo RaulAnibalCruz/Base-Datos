@@ -1,29 +1,24 @@
 @model IEnumerable<Bloody_Roar_2.Usuario>
 
 <h2>Lista de Usuarios</h2>
-
-<table class="table">
+<a class="btn btn-primary mb-3" href="/Usuarios/Crear">Dar de Alta Usuario</a>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Id</th>
             <th>Nombre</th>
             <th>Email</th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
-    @foreach (var usuario in Model)
-    {
-        <tr>
-            <td>@usuario.IdUsuario</td>
-            <td>@usuario.Nombre</td>
-            <td>@usuario.Email</td>
-            <td>
-                <a asp-action="Details" asp-route-id="@usuario.IdUsuario">Detalles</a>
-            </td>
-        </tr>
-    }
+        @foreach(var u in Model)
+        {
+            <tr>
+                <td>@u.IdUsuario</td>
+                <td>@u.Nombre</td>
+                <td>@u.Email</td>
+            </tr>
+        }
     </tbody>
 </table>
-
-<a asp-action="Create" class="btn btn-primary">Crear nuevo usuario</a>
+<a class="btn btn-secondary mt-3" href="/Home/Index">Volver a Inicio</a>

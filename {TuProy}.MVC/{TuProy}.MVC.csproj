@@ -5,6 +5,10 @@
     <ProjectReference Include="..\Bloody_Roar_2.PersistenciaDapper\Bloody_Roar_2.PersistenciaDapper.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.4.0" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>

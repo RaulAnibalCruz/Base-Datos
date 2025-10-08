@@ -1,0 +1,21 @@
+@model Bloody_Roar_2.Usuario
+
+<h2>Crear Usuario</h2>
+
+<form asp-action="Crear" method="post">
+    <div class="mb-3">
+        <label asp-for="Nombre" class="form-label"></label>
+        <input asp-for="Nombre" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Contrasenia" class="form-label"></label>
+        <input asp-for="Contrasenia" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control"/>
+    </div>
+    <button type="submit" class="btn btn-success">Crear</button>
+</form>
+
+<a class="btn btn-secondary mt-3" href="/Usuarios/Index">Volver a Lista</a>

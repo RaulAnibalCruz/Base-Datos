@@ -16,38 +16,26 @@ namespace _TuProy_.MVC.Controllers
             _dao = dao;
         }
 
-        // GET: /Usuarios
+        // Lista de usuarios
         public async Task<IActionResult> Index()
         {
             var usuarios = await _dao.ObtenerTodoUsuario();
             return View(usuarios);
         }
 
-        // GET: /Usuarios/Details/5
-        public async Task<IActionResult> Details(int id)
-        {
-            var usuario = await _dao.ObtenerUsuario(id);
-            if (usuario == null) return NotFound();
-            return View(usuario);
-        }
-
-        // GET: /Usuarios/Create
-        public IActionResult Create()
+        // Alta usuario
+        public IActionResult Crear()
         {
             return View();
         }
 
-        // POST: /Usuarios/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Usuario usuario)
+        public async Task<IActionResult> Crear(Usuario usuario)
         {
-            if (ModelState.IsValid)
-            {
-                await _dao.AltaUsuario(usuario);
-                return RedirectToAction(nameof(Index));
-            }
-            return View(usuario);
+            await _dao.AltaUsuario(usuario);
+            return RedirectToAction("Index");
         }
     }
 }
+
+
