@@ -18,10 +18,6 @@ builder.Services.AddScoped<IDao, DaoDapperAsync>();
 builder.Services.AddControllersWithViews();
 
 
-
-////
-
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

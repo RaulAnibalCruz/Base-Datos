@@ -118,13 +118,38 @@ public class DaoDapperAsync : IDao
         var usuarios = await _conexion.QueryAsync<Usuario>(sql);
         return usuarios;
     }
-    
+
     public async Task<IEnumerable<Personaje>> ObtenerTodoPersonaje()
     {
         var sql = "SELECT * FROM Personaje";
         var personajes = await _conexion.QueryAsync<Personaje>(sql);
         return personajes;
     }
+
+    public async Task<IEnumerable<ModoJuego>> ObtenerTodoModoJuego()
+    {
+        string sql = "SELECT * FROM ModoJuego"; // suponiendo que tu tabla se llama así
+        var lista = await _conexion.QueryAsync<ModoJuego>(sql);
+        return lista;
+    }
+
+
+
+    public async Task EliminarUsuario(int idUsuario)
+    {
+        await _conexion.ExecuteAsync("DELETE FROM Usuario WHERE idUsuario = @idUsuario", new { idUsuario });
+    }
+
+    public async Task EliminarPersonaje(int idPersonaje)
+    {
+        await _conexion.ExecuteAsync("DELETE FROM Personaje WHERE idPersonaje = @idPersonaje", new { idPersonaje });
+    }
+
+    public async Task EliminarModoJuego(int idModoJuego)
+    {
+        await _conexion.ExecuteAsync("DELETE FROM ModoJuego WHERE idModoJuego = @idModoJuego", new { idModoJuego });
+    }
+
 }
 
 

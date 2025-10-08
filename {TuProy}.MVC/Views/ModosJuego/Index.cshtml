@@ -1,0 +1,33 @@
+@model IEnumerable<Bloody_Roar_2.ModoJuego>
+
+@{
+    ViewData["Title"] = "Modos de Juego";
+}
+
+<h1>Modos de Juego</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Crear">Crear Nuevo Modo de Juego</a>
+    <a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Volver</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var modo in Model)
+        {
+            <tr>
+                <td>@modo.IdModoJuego</td>
+                <td>@modo.Nombre</td>
+                <td>
+            <a asp-action="Eliminar" asp-route-id="@modo.IdModoJuego" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+            </tr>
+        }
+    </tbody>
+</table>

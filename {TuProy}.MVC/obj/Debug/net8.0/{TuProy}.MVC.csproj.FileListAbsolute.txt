@@ -39,3 +39,6 @@ C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\{TuProy}.MVC\obj\Debug\net8.0\re
 C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\{TuProy}.MVC\obj\Debug\net8.0\{TuProy}.MVC.pdb
 C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\{TuProy}.MVC\obj\Debug\net8.0\{TuProy}.MVC.genruntimeconfig.cache
 C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\{TuProy}.MVC\obj\Debug\net8.0\ref\{TuProy}.MVC.dll
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\{TuProy}.MVC\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\{TuProy}.MVC\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Lab15-PC01\Documents\GitHub\Base-Datos\{TuProy}.MVC\bin\Debug\net8.0\MySqlConnector.dll

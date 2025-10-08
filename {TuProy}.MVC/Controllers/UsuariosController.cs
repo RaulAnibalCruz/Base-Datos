@@ -35,6 +35,14 @@ namespace _TuProy_.MVC.Controllers
             await _dao.AltaUsuario(usuario);
             return RedirectToAction("Index");
         }
+
+
+        public async Task<IActionResult> Eliminar(int id)
+        {
+            await _dao.EliminarUsuario(id);
+            return RedirectToAction("Index"); // vuelve a la lista de usuarios
+        }
+
     }
 }
 

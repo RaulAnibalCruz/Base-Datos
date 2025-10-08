@@ -23,4 +23,11 @@ public interface IDao
     Task<IEnumerable<Usuario>> ObtenerTodoUsuario();
 
     Task<IEnumerable<Personaje>> ObtenerTodoPersonaje();
+
+    Task<IEnumerable<ModoJuego>> ObtenerTodoModoJuego();
+
+    Task EliminarUsuario(int idUsuario);
+    Task EliminarPersonaje(int idPersonaje);
+    Task EliminarModoJuego(int idModoJuego);
 }
+

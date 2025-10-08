@@ -17,8 +17,14 @@
                 <td>@u.IdUsuario</td>
                 <td>@u.Nombre</td>
                 <td>@u.Email</td>
+            <td>
+            <a asp-action="Eliminar" asp-route-id="@u.IdUsuario" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
             </tr>
         }
     </tbody>
 </table>
 <a class="btn btn-secondary mt-3" href="/Home/Index">Volver a Inicio</a>
+
+
+

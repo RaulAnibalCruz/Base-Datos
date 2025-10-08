@@ -33,6 +33,13 @@ namespace _TuProy_.MVC.Controllers
             await _dao.AltaModoJuego(modo);
             return RedirectToAction("Index");
         }
+
+            public async Task<IActionResult> Eliminar(int id)
+    {
+        await _dao.EliminarModoJuego(id);
+        return RedirectToAction("Index"); // vuelve a la lista de modos de juego
+    }
+
     }
 }
 

@@ -20,6 +20,9 @@
                 <td>@p.Nombre</td>
                 <td>@p.NombreBestia</td>
                 <td>@p.ResistenciaBestia</td>
+                <td>
+            <a asp-action="Eliminar" asp-route-id="@p.IdPersonaje" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
             </tr>
         }
     </tbody>

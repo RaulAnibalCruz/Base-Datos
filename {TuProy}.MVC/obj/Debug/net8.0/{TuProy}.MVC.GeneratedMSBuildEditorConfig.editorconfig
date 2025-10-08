@@ -40,12 +40,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Base-Datos/\{TuProy\}.MVC/Views/ModosJuego/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kb3NKdWVnb1xDcmVhdGUuY3NodG1s
+[C:/Users/Lab15-PC01/Documents/GitHub/Base-Datos/\{TuProy\}.MVC/Views/ModosJuego/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kb3NKdWVnb1xDcmVhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lab15-PC01/Documents/GitHub/Base-Datos/\{TuProy\}.MVC/Views/ModosJuego/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kb3NKdWVnb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lab15-PC01/Documents/GitHub/Base-Datos/\{TuProy\}.MVC/Views/ModosJuego/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kb3NKdWVnb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lab15-PC01/Documents/GitHub/Base-Datos/\{TuProy\}.MVC/Views/Personajes/Crear.cshtml]

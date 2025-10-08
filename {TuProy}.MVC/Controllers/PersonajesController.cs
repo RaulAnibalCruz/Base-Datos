@@ -33,5 +33,13 @@ namespace _TuProy_.MVC.Controllers
             await _dao.AltaPersonaje(personaje);
             return RedirectToAction("Index");
         }
+
+
+            public async Task<IActionResult> Eliminar(int id)
+    {
+        await _dao.EliminarPersonaje(id);
+        return RedirectToAction("Index"); // vuelve a la lista de personajes
+    }
+
     }
 }
