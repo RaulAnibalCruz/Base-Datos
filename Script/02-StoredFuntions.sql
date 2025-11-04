@@ -7,7 +7,7 @@ CREATE FUNCTION ObtenerPersonajePorCombate (p_idCombate INT)
     READS SQL DATA
 BEGIN
     DECLARE personajeId INT;
-   
+
     -- Consultar el idPersonaje asociado al idCombate dado
     SELECT idPersonaje INTO personajeId
     FROM Combate

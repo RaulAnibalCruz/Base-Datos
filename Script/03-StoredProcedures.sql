@@ -27,10 +27,10 @@ END$$
 #Para agregar un ataque
 DELIMITER $$
 DROP PROCEDURE IF EXISTS AltaAtaque $$
-CREATE PROCEDURE AltaAtaque(OUT unIdAtaque INT, IN unTipoAtaque VARCHAR(45), IN unDanio INT)
+CREATE PROCEDURE AltaAtaque(OUT unIdAtaque INT, IN unTipoAtaque VARCHAR(45), IN unDanio INT, IN unIdPersonaje INT)
 BEGIN
-    INSERT INTO Ataque (Tipo_Ataque, Danio) 
-    VALUES (unTipoAtaque, unDanio);
+    INSERT INTO Ataque (Tipo_Ataque, Danio, idPersonaje)
+    VALUES (unTipoAtaque, unDanio, unIdPersonaje);
     SET unIdAtaque = LAST_INSERT_ID();
 END $$
 
@@ -76,3 +76,16 @@ BEGIN
     WHERE idModoJuego = unIdModoJuego;
 END $$
 
+#Llama al ataque
+DROP PROCEDURE IF EXISTS ObtenerAtaque $$
+CREATE PROCEDURE ObtenerAtaque()
+BEGIN
+    SELECT 
+        a.idAtaque,
+        a.Tipo_Ataque,
+        a.Danio,
+        a.idPersonaje,
+        p.Nombre AS NombrePersonaje
+    FROM Ataque a
+    INNER JOIN Personaje p ON a.idPersonaje = p.idPersonaje;
+END $$

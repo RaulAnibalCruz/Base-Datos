@@ -23,10 +23,11 @@ public class DaoDapperAsync : IDao
     {
         var parametros = new DynamicParameters();
         parametros.Add("@unIdAtaque", direction: ParameterDirection.Output);
-        parametros.Add("@unTipoAtaque", ataque.TipoAtaque);
+        parametros.Add("@unTipoAtaque", ataque.Tipo_Ataque);
         parametros.Add("@unDanio", ataque.Danio);
+        parametros.Add("@unIdPersonaje", ataque.IdPersonaje);
 
-        await _conexion.ExecuteAsync("AltaAtaque", parametros);
+        await _conexion.ExecuteAsync("AltaAtaque", parametros, commandType: CommandType.StoredProcedure);
         ataque.IdAtaque = parametros.Get<int>("unIdAtaque");
     }
 
@@ -81,11 +82,15 @@ public class DaoDapperAsync : IDao
     }
 
 
-    public async Task<Ataque?> ObtenerAtaque(int IdAtaque)
+    public async Task<IEnumerable<Ataque>> ObtenerAtaque()
     {
-        var query = "SELECT * FROM Ataque WHERE IdAtaque = @IdAtaque";
-        return await _conexion.QueryFirstOrDefaultAsync<Ataque>(query, new { IdAtaque });
+        using var conexion = _conexion;
+        var lista = await conexion.QueryAsync<Ataque>(
+            "ObtenerTodoAtaque",
+            commandType: CommandType.StoredProcedure);
+        return lista;
     }
+
 
     public async Task<Combate?> ObtenerCombatePorId(int idCombate)
     {
@@ -149,6 +154,14 @@ public class DaoDapperAsync : IDao
     {
         await _conexion.ExecuteAsync("DELETE FROM ModoJuego WHERE idModoJuego = @idModoJuego", new { idModoJuego });
     }
+
+    public async Task EliminarAtaque(int id)
+{
+    var parametros = new DynamicParameters();
+    parametros.Add("@idAtaque", id);
+    await _conexion.ExecuteAsync("EliminarAtaque", parametros, commandType: CommandType.StoredProcedure);
+}
+
 
 }
 

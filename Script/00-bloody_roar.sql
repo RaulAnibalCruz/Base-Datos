@@ -34,12 +34,22 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `5to_Bloody_Roar_2`.`Ataque`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `5to_Bloody_Roar_2`.`Ataque` (
-  `idAtaque` INT NOT NULL AUTO_INCREMENT,
-  `Tipo_Ataque` VARCHAR(45) NULL,
-  `Danio` INT NULL,
-  PRIMARY KEY (`idAtaque`))
-ENGINE = InnoDB;
+DROP TABLE IF EXISTS Ataque;
+
+CREATE TABLE Ataque (
+  idAtaque INT NOT NULL AUTO_INCREMENT,
+  Tipo_Ataque VARCHAR(45) NULL,
+  Danio INT NULL,
+  idPersonaje INT NOT NULL,
+  PRIMARY KEY (idAtaque),
+  CONSTRAINT fk_Ataque_Personaje
+    FOREIGN KEY (idPersonaje)
+    REFERENCES Personaje (idPersonaje)
+    ON DELETE CASCADE
+    ENGINE = InnoDB;
+
+);
+
 
 
 -- -----------------------------------------------------

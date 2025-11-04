@@ -16,28 +16,45 @@ namespace _TuProy_.MVC.Controllers
             _dao = dao;
         }
 
-        public async Task<IActionResult> Details(int id)
+        // ✅ Mostrar todos los ataques
+        public async Task<IActionResult> Index()
         {
-            var ataque = await _dao.ObtenerAtaque(id);
-            if (ataque == null) return NotFound();
-            return View(ataque);
+            var lista = await _dao.ObtenerAtaque(); // ← método que devuelve lista con nombre del personaje
+            return View(lista);
         }
 
-        public IActionResult Create()
+        // ✅ Formulario para crear un nuevo ataque
+        [HttpGet]
+        public async Task<IActionResult> Crear()
         {
+            // Trae los personajes para mostrarlos en el <select>
+            var personajes = await _dao.ObtenerTodoPersonaje();
+            ViewBag.Personajes = personajes;
             return View();
         }
 
+        // ✅ Alta del ataque en BD
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Ataque ataque)
+        public async Task<IActionResult> Crear(Ataque ataque)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                await _dao.AltaAtaque(ataque);
-                return RedirectToAction("Details", new { id = ataque.IdAtaque });
+                var personajes = await _dao.ObtenerTodoPersonaje();
+                ViewBag.Personajes = personajes;
+                return View(ataque);
             }
-            return View(ataque);
+
+            await _dao.AltaAtaque(ataque);
+            return RedirectToAction("Index");
+        }
+
+        // ✅ Eliminar un ataque
+        [HttpPost]
+        public async Task<IActionResult> Eliminar(int id)
+        {
+            await _dao.EliminarAtaque(id);
+            return RedirectToAction("Index");
         }
     }
 }
+

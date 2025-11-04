@@ -29,5 +29,9 @@ public interface IDao
     Task EliminarUsuario(int idUsuario);
     Task EliminarPersonaje(int idPersonaje);
     Task EliminarModoJuego(int idModoJuego);
+
+    Task<IEnumerable<Ataque>> ObtenerAtaque();
+    Task EliminarAtaque(int id);
+
 }
 
