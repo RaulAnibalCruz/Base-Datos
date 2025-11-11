@@ -61,7 +61,6 @@ public class DaoDapperAsync : IDao
         parametros.Add("@p_Nombre", personaje.Nombre);
         parametros.Add("@p_NombreBestia", personaje.NombreBestia);
         parametros.Add("@p_ResistenciaBestia", personaje.ResistenciaBestia);
-        parametros.Add("@p_Ataques", personaje.ataques);
 
         await _conexion.ExecuteAsync("AltaPersonaje", parametros);
         personaje.IdPersonaje = parametros.Get<int>("p_IdPersonaje");
@@ -82,14 +81,14 @@ public class DaoDapperAsync : IDao
     }
 
 
-    public async Task<IEnumerable<Ataque>> ObtenerAtaque()
-    {
-        using var conexion = _conexion;
-        var lista = await conexion.QueryAsync<Ataque>(
-            "ObtenerTodoAtaque",
-            commandType: CommandType.StoredProcedure);
-        return lista;
-    }
+    public async Task<Ataque?> ObtenerAtaque(int IdAtaque)
+{
+    var parametros = new DynamicParameters();
+    parametros.Add("@unIdAtaque", IdAtaque);
+    return await _conexion.QueryFirstOrDefaultAsync<Ataque>("ObtenerAtaque", parametros,  commandType: CommandType.StoredProcedure
+    );
+}
+
 
 
     public async Task<Combate?> ObtenerCombatePorId(int idCombate)
