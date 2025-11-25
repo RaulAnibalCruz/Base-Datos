@@ -1,6 +1,4 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using _TuProy_.MVC.Models;
 using Bloody_Roar_2;
 using Bloody_Roar_2.Persistencia;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -16,59 +14,64 @@ namespace _TuProy_.MVC.Controllers
             _dao = dao;
         }
 
-        // Mostrar todos los ataques
         public async Task<IActionResult> Index()
         {
+            if (HttpContext.Session.GetInt32("IdUsuario") == null)
+                return RedirectToAction("Login", "Account");
+
             var lista = await _dao.ObtenerAtaque();
             return View(lista);
         }
 
-        // Formulario GET para crear un ataque
         [HttpGet]
         public async Task<IActionResult> Crear()
         {
+            if (HttpContext.Session.GetInt32("IdUsuario") == null)
+                return RedirectToAction("Login", "Account");
+
             var personajes = await _dao.ObtenerTodoPersonaje();
             ViewBag.Personajes = new SelectList(personajes, "IdPersonaje", "Nombre");
             return View();
         }
 
-        // Alta en BD
         [HttpPost]
-    public async Task<IActionResult> Crear(Ataque ataque)
-    {
-        if (!ModelState.IsValid)
+        public async Task<IActionResult> Crear(Ataque ataque)
         {
-            var personajes = await _dao.ObtenerTodoPersonaje();
-            ViewBag.Personajes = new SelectList(personajes, "IdPersonaje", "Nombre");
-            return View(ataque);
+            if (HttpContext.Session.GetInt32("IdUsuario") == null)
+                return RedirectToAction("Login", "Account");
+
+            if (!ModelState.IsValid)
+            {
+                var personajes = await _dao.ObtenerTodoPersonaje();
+                ViewBag.Personajes = new SelectList(personajes, "IdPersonaje", "Nombre");
+                return View(ataque);
+            }
+
+            var listaAtaques = await _dao.ObtenerAtaque();
+
+            bool existe = listaAtaques.Any(a =>
+                a.IdPersonaje == ataque.IdPersonaje &&
+                a.Tipo_Ataque.ToLower().Trim() == ataque.Tipo_Ataque.ToLower().Trim()
+            );
+
+            if (existe)
+            {
+                ModelState.AddModelError("", "⚠ Este personaje ya posee un ataque de ese tipo.");
+                var personajes = await _dao.ObtenerTodoPersonaje();
+                ViewBag.Personajes = new SelectList(personajes, "IdPersonaje", "Nombre");
+                return View(ataque);
+            }
+
+            await _dao.AltaAtaque(ataque);
+            return RedirectToAction("Index");
         }
 
-        // 🔥 VALIDACIÓN: evitar ataques repetidos para el mismo personaje
-        var listaAtaques = await _dao.ObtenerAtaque();
-
-        bool existe = listaAtaques.Any(a =>
-            a.IdPersonaje == ataque.IdPersonaje &&
-            a.Tipo_Ataque.ToLower().Trim() == ataque.Tipo_Ataque.ToLower().Trim()
-        );
-
-        if (existe)
-        {
-            ModelState.AddModelError("", "⚠ Este personaje ya posee un ataque de ese tipo. No se puede repetir.");
-            var personajes = await _dao.ObtenerTodoPersonaje();
-            ViewBag.Personajes = new SelectList(personajes, "IdPersonaje", "Nombre");
-            return View(ataque);
-        }
-
-        await _dao.AltaAtaque(ataque);
-        return RedirectToAction("Index");
-    }
-
-        
-
-        // Eliminar ataque
         [HttpPost]
         public async Task<IActionResult> Eliminar(int id)
         {
+            if (HttpContext.Session.GetInt32("IdUsuario") == null)
+                return RedirectToAction("Login", "Account");
+
             await _dao.EliminarAtaque(id);
             return RedirectToAction("Index");
         }

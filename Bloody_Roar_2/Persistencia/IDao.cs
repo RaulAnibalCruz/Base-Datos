@@ -33,5 +33,8 @@ public interface IDao
     Task EliminarModoJuego(int idModoJuego);
     Task EliminarAtaque(int id);
 
+    Task<Usuario?> ObtenerUsuarioPorLogin(string nombre, string email);
+
+
 }
 

@@ -13,11 +13,11 @@ public class DaoDapperAsync : IDao
     public DaoDapperAsync(IDbConnection conexion)
         => _conexion = conexion;
 
-    public async Task ActualizarDuracionCombate(int idCombate, int nuevaDuracion)
-    {
-        var query = "UPDATE Combate SET Duracion = @NuevaDuracion WHERE IdCombate = @IdCombate";
-        await _conexion.ExecuteAsync(query, new { NuevaDuracion = nuevaDuracion, IdCombate = idCombate });
-    }
+        public async Task ActualizarDuracionCombate(int idCombate, int nuevaDuracion)
+        {
+            var query = "UPDATE Combate SET Duracion = @NuevaDuracion WHERE idCombate = @IdCombate";
+            await _conexion.ExecuteAsync(query, new { NuevaDuracion = nuevaDuracion, IdCombate = idCombate });
+        }
 
     public async Task AltaAtaque(Ataque ataque)
     {
@@ -31,18 +31,20 @@ public class DaoDapperAsync : IDao
         ataque.IdAtaque = parametros.Get<int>("unIdAtaque");
     }
 
-    public async Task AltaCombate(Combate combate)
-    {
-        var parametros = new DynamicParameters();
-        parametros.Add("p_idCombate", direction: ParameterDirection.Output);
-        parametros.Add("p_idPersonaje", combate.Personaje.IdPersonaje);
-        parametros.Add("p_idUsuario", combate.Usuario.IdUsuario);
-        parametros.Add("p_idModo_Juego", combate.ModoJuego.IdModoJuego);
-        parametros.Add("p_Duracion", combate.Duracion);
+ public async Task AltaCombate(Combate combate)
+{
+    var parametros = new DynamicParameters();
+    parametros.Add("p_idCombate", dbType: DbType.Int32, direction: ParameterDirection.Output);
+    parametros.Add("p_idPersonaje", combate.IdPersonaje);
+    parametros.Add("p_idUsuario", combate.IdUsuario);
+    parametros.Add("p_idModo_Juego", combate.IdModo_Juego);
+    parametros.Add("p_Duracion", combate.Duracion);
 
-        await _conexion.ExecuteAsync("AltaCombate", parametros);
-        combate.IdCombate = parametros.Get<int>("p_idCombate");
-    }
+    await _conexion.ExecuteAsync("AltaCombate", parametros, commandType: CommandType.StoredProcedure);
+
+    combate.IdCombate = parametros.Get<int>("p_idCombate");
+}
+
 
     public async Task AltaModoJuego(ModoJuego modoJuego)
     {
@@ -95,6 +97,19 @@ public class DaoDapperAsync : IDao
         return usuario;
     }
 
+    public async Task<Usuario?> ObtenerUsuarioPorLogin(string nombre, string email)
+{
+    var parametros = new DynamicParameters();
+    parametros.Add("@Nombre", nombre);
+    parametros.Add("@Email", email);
+
+    return await _conexion.QueryFirstOrDefaultAsync<Usuario>(
+        "SELECT * FROM Usuario WHERE Nombre = @Nombre AND Email = @Email",
+        parametros
+    );
+}
+
+
 
     public async Task<IEnumerable<Ataque>> ObtenerAtaque()
 {
@@ -117,11 +132,10 @@ public class DaoDapperAsync : IDao
 
 
     public async Task<Combate?> ObtenerCombatePorId(int idCombate)
-    {
-        var query = "SELECT * FROM Combate WHERE IdCombate = @IdCombate";
-        return await _conexion.QueryFirstOrDefaultAsync<Combate>(query, new { IdCombate = idCombate });
-
-    }
+{
+    var query = "SELECT * FROM Combate WHERE idCombate = @Id";
+    return await _conexion.QueryFirstOrDefaultAsync<Combate>(query, new { Id = idCombate });
+}
 
     public async Task<ModoJuego?> ObtenerModoJuego(int IdModoJuego)
     {

@@ -1,11 +1,8 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using _TuProy_.MVC.Models;
 using Bloody_Roar_2;
 using Bloody_Roar_2.Persistencia;
 
 namespace _TuProy_.MVC.Controllers
-
 {
     public class PersonajesController : Controller
     {
@@ -18,28 +15,38 @@ namespace _TuProy_.MVC.Controllers
 
         public async Task<IActionResult> Index()
         {
+            if (HttpContext.Session.GetInt32("IdUsuario") == null)
+                return RedirectToAction("Login", "Account");
+
             var personajes = await _dao.ObtenerTodoPersonaje();
             return View(personajes);
         }
 
         public IActionResult Crear()
         {
+            if (HttpContext.Session.GetInt32("IdUsuario") == null)
+                return RedirectToAction("Login", "Account");
+
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> Crear(Personaje personaje)
         {
+            if (HttpContext.Session.GetInt32("IdUsuario") == null)
+                return RedirectToAction("Login", "Account");
+
             await _dao.AltaPersonaje(personaje);
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> Eliminar(int id)
+        {
+            if (HttpContext.Session.GetInt32("IdUsuario") == null)
+                return RedirectToAction("Login", "Account");
 
-            public async Task<IActionResult> Eliminar(int id)
-    {
-        await _dao.EliminarPersonaje(id);
-        return RedirectToAction("Index"); // vuelve a la lista de personajes
-    }
-
+            await _dao.EliminarPersonaje(id);
+            return RedirectToAction("Index");
+        }
     }
 }

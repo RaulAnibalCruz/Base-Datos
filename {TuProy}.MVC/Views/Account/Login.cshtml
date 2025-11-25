@@ -1,0 +1,41 @@
+@model Bloody_Roar_2.Usuario
+@{
+    ViewData["Title"] = "Iniciar sesión";
+}
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card shadow-lg p-4" style="width: 380px; border-radius: 15px;">
+
+        <h3 class="text-center mb-4">Iniciar sesión</h3>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger text-center">@TempData["Error"]</div>
+        }
+
+        <form method="post" asp-action="Login">
+
+            <div class="mb-3">
+                <label class="form-label">Nombre de usuario</label>
+                <input type="text" asp-for="Nombre" class="form-control" placeholder="Tu nombre..." required />
+                <span class="text-danger" asp-validation-for="Nombre"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="password" asp-for="Contrasenia" class="form-control" placeholder="Tu contraseña..." required />
+                <span class="text-danger" asp-validation-for="Contrasenia"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mt-2" style="padding: 10px;">
+                Iniciar sesión
+            </button>
+
+        </form>
+
+        <div class="text-center mt-3">
+            <a href="/Account/Registrar" class="text-decoration-none">Crear una cuenta</a>
+        </div>
+
+    </div>
+</div>
