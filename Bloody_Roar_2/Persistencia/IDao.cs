@@ -6,7 +6,7 @@ public interface IDao
 {
     Task ActualizarDuracionCombate(int idCombate, int nuevaDuracion);
     Task AltaPersonaje(Personaje personaje);
-    Task<int> AltaUsuario(Usuario usuario);   
+    Task<int> AltaUsuario(Usuario usuario);
     Task<Combate?> ObtenerCombatePorId(int idCombate);
     Task AltaAtaque(Ataque ataque);
 
@@ -35,6 +35,9 @@ public interface IDao
 
     Task<Usuario?> ObtenerUsuarioPorLogin(string nombre, string email);
 
+    Task EliminarCombate(int idCombate);
+
+    Task<IEnumerable<Combate>> ObtenerTodoCombate();
 
 }
 

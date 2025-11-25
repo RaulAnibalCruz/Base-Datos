@@ -175,6 +175,19 @@ public class DaoDapperAsync : IDao
         return lista;
     }
 
+            public async Task<IEnumerable<Combate>> ObtenerTodoCombate()
+        {
+            var query = "SELECT * FROM Combate";
+            return await _conexion.QueryAsync<Combate>(query);
+        }
+
+        public async Task EliminarCombate(int idCombate)
+        {
+            var query = "DELETE FROM Combate WHERE IdCombate = @IdCombate";
+            await _conexion.ExecuteAsync(query, new { IdCombate = idCombate });
+        }
+
+
 
 
 // Eliminar por id (si no tenés SP, usamos SQL directo)

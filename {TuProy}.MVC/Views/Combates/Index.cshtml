@@ -1,13 +1,36 @@
-@model Bloody_Roar_2.Combate
+@model IEnumerable<Bloody_Roar_2.Combate>
 
-<h2>Detalle de Combate</h2>
+<h2>Combates</h2>
 
-<div class="card p-3" style="width:300px;">
-    <p><strong>Id Combate:</strong> @Model.IdCombate</p>
-    <p><strong>Id Personaje:</strong> @Model.IdPersonaje</p>
-    <p><strong>Id Usuario:</strong> @Model.IdUsuario</p>
-    <p><strong>Id Modo de Juego:</strong> @Model.IdModo_Juego</p>
-    <p><strong>Duración:</strong> @Model.Duracion</p>
-</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id Combate</th>
+            <th>Personaje</th>
+            <th>Usuario</th>
+            <th>Modo de Juego</th>
+            <th>Duración</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.IdCombate</td>
+            <td>@c.IdPersonaje</td>
+            <td>@c.IdUsuario</td>
+            <td>@c.IdModo_Juego</td>
+            <td>@c.Duracion</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@c.IdCombate" class="btn btn-sm btn-info">Ver</a>
+                <form asp-action="Eliminar" asp-route-id="@c.IdCombate" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
 
-<a asp-action="Index" class="btn btn-secondary mt-2">Volver a la lista</a>
+<a asp-action="Create" class="btn btn-success mt-2">Agregar Combate</a>

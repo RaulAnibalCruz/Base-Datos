@@ -1,0 +1,29 @@
+@model Bloody_Roar_2.Combate
+
+<h2>Nuevo Combate</h2>
+
+<form method="post" asp-action="Create">
+
+    <div class="mb-3">
+        <label>Personaje</label>
+        <select asp-for="IdPersonaje" class="form-control" asp-items="@(new SelectList(ViewBag.Personajes, "IdPersonaje", "Nombre"))"></select>
+    </div>
+
+    <div class="mb-3">
+        <label>Usuario</label>
+        <select asp-for="IdUsuario" class="form-control" asp-items="@(new SelectList(ViewBag.Usuarios, "IdUsuario", "Nombre"))"></select>
+    </div>
+
+    <div class="mb-3">
+        <label>Modo de Juego</label>
+        <select asp-for="IdModo_Juego" class="form-control" asp-items="@(new SelectList(ViewBag.Modos, "IdModoJuego", "Nombre"))"></select>
+    </div>
+
+    <div class="mb-3">
+        <label>Duración (segundos)</label>
+        <input type="number" asp-for="Duracion" class="form-control" min="0" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Agregar</button>
+    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+</form>

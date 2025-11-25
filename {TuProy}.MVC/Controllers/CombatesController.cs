@@ -13,7 +13,18 @@ namespace _TuProy_.MVC.Controllers
             _dao = dao;
         }
 
-        // GET /Combates/Create
+        // =============================
+        //      INDEX - Listar Combates
+        // =============================
+        public async Task<IActionResult> Index()
+        {
+            var combates = await _dao.ObtenerTodoCombate();
+            return View(combates);
+        }
+
+        // =============================
+        //      CREATE GET
+        // =============================
         public async Task<IActionResult> Create()
         {
             ViewBag.Personajes = await _dao.ObtenerTodoPersonaje();
@@ -22,7 +33,9 @@ namespace _TuProy_.MVC.Controllers
             return View();
         }
 
-        // POST /Combates/Create
+        // =============================
+        //      CREATE POST
+        // =============================
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Combate combate)
@@ -36,16 +49,28 @@ namespace _TuProy_.MVC.Controllers
             ViewBag.Personajes = await _dao.ObtenerTodoPersonaje();
             ViewBag.Modos = await _dao.ObtenerTodoModoJuego();
             ViewBag.Usuarios = await _dao.ObtenerTodoUsuario();
-
             return View(combate);
         }
 
-        // GET /Combates/Details/5
+        // =============================
+        //      DETAILS
+        // =============================
         public async Task<IActionResult> Details(int id)
         {
             var combate = await _dao.ObtenerCombatePorId(id);
             if (combate == null) return NotFound();
             return View(combate);
+        }
+
+        // =============================
+        //      ELIMINAR
+        // =============================
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Eliminar(int id)
+        {
+            await _dao.EliminarCombate(id);
+            return RedirectToAction("Index");
         }
     }
 }
