@@ -40,13 +40,18 @@ CREATE TABLE IF NOT EXISTS `5to_Bloody_Roar_2`.`Ataque` (
 -- -----------------------------------------------------
 -- Table Usuario
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `5to_Bloody_Roar_2`.`Usuario` (
+CREATE TABLE IF NOT EXISTS `Usuario` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(45) NULL,
-  `Contrasenia` CHAR(64) NULL,
-  `Email` VARCHAR(45) NULL,
-  PRIMARY KEY (`idUsuario`)
-) ENGINE = InnoDB;
+  `Nombre` VARCHAR(100),
+  `Contrasenia` VARCHAR(256),
+  `Email` VARCHAR(100),
+  PRIMARY KEY (`idUsuario`),
+  UNIQUE KEY uq_usuario_email (`Email`)
+) ENGINE=InnoDB;
+
+
+
+
 
 -- -----------------------------------------------------
 -- Table ModoJuego

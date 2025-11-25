@@ -1,29 +1,29 @@
 @model Bloody_Roar_2.Ataque
 
-<h2>Crear nuevo Ataque</h2>
+<h2>Crear Ataque</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
 
 <form asp-action="Crear" method="post">
-    <div class="form-group">
-        <label for="Tipo_Ataque">Tipo de Ataque</label>
-        <input asp-for="Tipo_Ataque" class="form-control" />
+    <div class="mb-3">
+        <label class="form-label">Tipo de Ataque</label>
+        <input asp-for="Tipo_Ataque" class="form-control" required />
     </div>
 
-    <div class="form-group">
-        <label for="Danio">Daño</label>
-        <input asp-for="Danio" type="number" class="form-control" />
+    <div class="mb-3">
+        <label class="form-label">Daño</label>
+        <input asp-for="Danio" class="form-control" type="number" required />
     </div>
 
-    <div class="form-group">
-        <label for="IdPersonaje">Personaje</label>
-        <select asp-for="IdPersonaje" class="form-control">
-            <option value="">Seleccione un personaje</option>
-            @foreach (var p in ViewBag.Personajes)
-            {
-                <option value="@p.IdPersonaje">@p.Nombre</option>
-            }
+    <div class="mb-3">
+        <label class="form-label">Personaje</label>
+        <select asp-for="IdPersonaje" asp-items="ViewBag.Personajes" class="form-control">
+            <option value="">Seleccionar...</option>
         </select>
     </div>
 
-    <button type="submit" class="btn btn-success">Guardar</button>
-    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+    <button type="submit" class="btn btn-success">Crear</button>
 </form>
+
+<a asp-action="Index" class="btn btn-secondary mt-3">Volver</a>

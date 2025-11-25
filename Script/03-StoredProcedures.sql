@@ -15,13 +15,28 @@ END $$
 
 #Para agregar un usuario
 DELIMITER $$
+
 DROP PROCEDURE IF EXISTS AltaUsuario $$
-CREATE PROCEDURE AltaUsuario(OUT unIdUsuario INT, IN unNombre VARCHAR(45), IN unaContrasenia VARCHAR(64), IN unEmail VARCHAR(45))
+CREATE PROCEDURE AltaUsuario(
+    OUT unIdUsuario INT,
+    IN unNombre VARCHAR(45),
+    IN unaContrasenia VARCHAR(64),
+    IN unEmail VARCHAR(45)
+)
 BEGIN
-    INSERT INTO Usuario (Nombre, Contrasenia, Email) 
-    VALUES (unNombre, unaContrasenia, unEmail);
-    SET unIdUsuario = LAST_INSERT_ID();
+    -- Verificar si el email ya existe
+    IF EXISTS(SELECT 1 FROM Usuario WHERE Email = unEmail) THEN
+        SET unIdUsuario = -1; -- Indica que el usuario ya existe
+    ELSE
+        INSERT INTO Usuario (Nombre, Contrasenia, Email)
+        VALUES (unNombre, unaContrasenia, unEmail);
+
+        SET unIdUsuario = LAST_INSERT_ID();
+    END IF;
 END$$
+
+DELIMITER ;
+
 
 
 #Para agregar un ataque
@@ -89,3 +104,25 @@ BEGIN
     FROM Ataque a
     INNER JOIN Personaje p ON a.idPersonaje = p.idPersonaje;
 END $$
+
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS EliminarAtaque $$
+CREATE PROCEDURE EliminarAtaque(IN idAtaque INT)
+BEGIN
+    DELETE FROM Ataque WHERE IdAtaque = idAtaque;
+END $$
+
+DELIMITER ;
+
+-- Buscar usuario por email (devuelve 0/1 fila)
+DELIMITER $$
+DROP PROCEDURE IF EXISTS BuscarUsuarioPorEmail $$
+CREATE PROCEDURE BuscarUsuarioPorEmail(IN emailBuscado VARCHAR(100))
+BEGIN
+    SELECT idUsuario, Nombre, Contrasenia, Email
+    FROM Usuario
+    WHERE Email = emailBuscado
+    LIMIT 1;
+END $$
+DELIMITER ;

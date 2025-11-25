@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using _TuProy_.MVC.Models;
 using Bloody_Roar_2;
 using Bloody_Roar_2.Persistencia;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace _TuProy_.MVC.Controllers
-
 {
     public class AtaquesController : Controller
     {
@@ -16,39 +16,56 @@ namespace _TuProy_.MVC.Controllers
             _dao = dao;
         }
 
-        // ✅ Mostrar todos los ataques
+        // Mostrar todos los ataques
         public async Task<IActionResult> Index()
         {
-            var lista = await _dao.ObtenerAtaque(); // ← método que devuelve lista con nombre del personaje
+            var lista = await _dao.ObtenerAtaque();
             return View(lista);
         }
 
-        // ✅ Formulario para crear un nuevo ataque
+        // Formulario GET para crear un ataque
         [HttpGet]
         public async Task<IActionResult> Crear()
         {
-            // Trae los personajes para mostrarlos en el <select>
             var personajes = await _dao.ObtenerTodoPersonaje();
-            ViewBag.Personajes = personajes;
+            ViewBag.Personajes = new SelectList(personajes, "IdPersonaje", "Nombre");
             return View();
         }
 
-        // ✅ Alta del ataque en BD
+        // Alta en BD
         [HttpPost]
-        public async Task<IActionResult> Crear(Ataque ataque)
+    public async Task<IActionResult> Crear(Ataque ataque)
+    {
+        if (!ModelState.IsValid)
         {
-            if (!ModelState.IsValid)
-            {
-                var personajes = await _dao.ObtenerTodoPersonaje();
-                ViewBag.Personajes = personajes;
-                return View(ataque);
-            }
-
-            await _dao.AltaAtaque(ataque);
-            return RedirectToAction("Index");
+            var personajes = await _dao.ObtenerTodoPersonaje();
+            ViewBag.Personajes = new SelectList(personajes, "IdPersonaje", "Nombre");
+            return View(ataque);
         }
 
-        // ✅ Eliminar un ataque
+        // 🔥 VALIDACIÓN: evitar ataques repetidos para el mismo personaje
+        var listaAtaques = await _dao.ObtenerAtaque();
+
+        bool existe = listaAtaques.Any(a =>
+            a.IdPersonaje == ataque.IdPersonaje &&
+            a.Tipo_Ataque.ToLower().Trim() == ataque.Tipo_Ataque.ToLower().Trim()
+        );
+
+        if (existe)
+        {
+            ModelState.AddModelError("", "⚠ Este personaje ya posee un ataque de ese tipo. No se puede repetir.");
+            var personajes = await _dao.ObtenerTodoPersonaje();
+            ViewBag.Personajes = new SelectList(personajes, "IdPersonaje", "Nombre");
+            return View(ataque);
+        }
+
+        await _dao.AltaAtaque(ataque);
+        return RedirectToAction("Index");
+    }
+
+        
+
+        // Eliminar ataque
         [HttpPost]
         public async Task<IActionResult> Eliminar(int id)
         {
@@ -57,4 +74,3 @@ namespace _TuProy_.MVC.Controllers
         }
     }
 }
-

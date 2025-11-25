@@ -66,28 +66,53 @@ public class DaoDapperAsync : IDao
         personaje.IdPersonaje = parametros.Get<int>("p_IdPersonaje");
     }
 
-    public async Task AltaUsuario(Usuario usuario)
+
+    // AltaUsuario: retorna el id (o -1 si existe)
+    public async Task<int> AltaUsuario(Usuario usuario)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("@unIdUsuario", direction: ParameterDirection.Output);
-        parametros.Add("@unNombre", usuario.Nombre);
-        parametros.Add("@unaContrasenia", usuario.Contrasenia);
-        parametros.Add("@unEmail", usuario.Email);
-        // parametros.Add("@unUltimoCombate", usuario.UltimoCombate);
-        parametros.Add("@unIdUltimoCombate", usuario.UltimoCombate?.IdCombate, DbType.Int32);
-        await _conexion.ExecuteAsync("AltaUsuario", parametros);
+        parametros.Add("unIdUsuario", dbType: DbType.Int32, direction: ParameterDirection.Output);
+        parametros.Add("unNombre", usuario.Nombre);
+        parametros.Add("unaContrasenia", usuario.Contrasenia);
+        parametros.Add("unEmail", usuario.Email);
 
-        usuario.IdUsuario = parametros.Get<int>("@unIdUsuario");
+        await _conexion.ExecuteAsync("AltaUsuario", parametros, commandType: CommandType.StoredProcedure);
+
+        return parametros.Get<int>("unIdUsuario");
+    }
+
+// Buscar por email (usa SP BuscarUsuarioPorEmail)
+    public async Task<Usuario?> BuscarUsuarioPorEmail(string email)
+    {
+        var parametros = new DynamicParameters();
+        parametros.Add("@emailBuscado", email);
+        // usando QueryFirstOrDefault con commandType SP
+        var usuario = await _conexion.QueryFirstOrDefaultAsync<Usuario>(
+            "BuscarUsuarioPorEmail",
+            parametros,
+            commandType: CommandType.StoredProcedure
+        );
+        return usuario;
     }
 
 
-    public async Task<Ataque?> ObtenerAtaque(int IdAtaque)
+    public async Task<IEnumerable<Ataque>> ObtenerAtaque()
 {
-    var parametros = new DynamicParameters();
-    parametros.Add("@unIdAtaque", IdAtaque);
-    return await _conexion.QueryFirstOrDefaultAsync<Ataque>("ObtenerAtaque", parametros,  commandType: CommandType.StoredProcedure
-    );
+    var sql = @"
+        SELECT 
+            a.IdAtaque,
+            a.Tipo_Ataque,
+            a.Danio,
+            a.IdPersonaje,
+            p.Nombre AS NombrePersonaje
+        FROM Ataque a
+        INNER JOIN Personaje p ON a.IdPersonaje = p.IdPersonaje;
+    ";
+
+    return await _conexion.QueryAsync<Ataque>(sql);
 }
+
+
 
 
 
@@ -116,12 +141,11 @@ public class DaoDapperAsync : IDao
         return await _conexion.QueryFirstOrDefaultAsync<Usuario>(query, new { IdUsuario });
     }
 
-    public async Task<IEnumerable<Usuario>> ObtenerTodoUsuario()
-    {
-        var sql = "SELECT * FROM Usuario";
-        var usuarios = await _conexion.QueryAsync<Usuario>(sql);
-        return usuarios;
-    }
+        public async Task<IEnumerable<Usuario>> ObtenerTodoUsuario()
+        {
+            var sql = "SELECT idUsuario AS IdUsuario, Nombre, Contrasenia, Email FROM Usuario";
+            return await _conexion.QueryAsync<Usuario>(sql);
+        }
 
     public async Task<IEnumerable<Personaje>> ObtenerTodoPersonaje()
     {
@@ -139,9 +163,11 @@ public class DaoDapperAsync : IDao
 
 
 
+// Eliminar por id (si no tenés SP, usamos SQL directo)
     public async Task EliminarUsuario(int idUsuario)
     {
-        await _conexion.ExecuteAsync("DELETE FROM Usuario WHERE idUsuario = @idUsuario", new { idUsuario });
+        var sql = "DELETE FROM Usuario WHERE idUsuario = @id";
+        await _conexion.ExecuteAsync(sql, new { id = idUsuario });
     }
 
     public async Task EliminarPersonaje(int idPersonaje)
