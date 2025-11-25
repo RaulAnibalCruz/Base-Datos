@@ -16,10 +16,10 @@
         <form method="post" asp-action="Login">
 
             <div class="mb-3">
-                <label class="form-label">Nombre de usuario</label>
-                <input type="text" asp-for="Nombre" class="form-control" placeholder="Tu nombre..." required />
-                <span class="text-danger" asp-validation-for="Nombre"></span>
-            </div>
+        <label class="form-label">Email</label>
+        <input type="email" asp-for="Email" class="form-control" placeholder="tuemail@gmail.com" required />
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
 
             <div class="mb-3">
                 <label class="form-label">Contraseña</label>

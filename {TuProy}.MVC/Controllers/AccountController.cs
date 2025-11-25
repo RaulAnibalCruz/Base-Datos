@@ -25,26 +25,29 @@ namespace _TuProy_.MVC.Controllers
         //      LOGIN POST
         // =============================
         [HttpPost]
-        public async Task<IActionResult> Login(string nombre, string email, string contrasenia)
+        public async Task<IActionResult> Login(Usuario model)
         {
-            var usuario = await _dao.ObtenerUsuarioPorLogin(nombre, email);
+            if (string.IsNullOrWhiteSpace(model.Email) || string.IsNullOrWhiteSpace(model.Contrasenia))
+            {
+                ViewBag.Error = "Email y contraseña son obligatorios.";
+                return View();
+            }
+
+            var usuario = await _dao.BuscarUsuarioPorEmail(model.Email);
 
             if (usuario == null)
             {
-                ViewBag.Error = "Usuario o email incorrectos.";
+                ViewBag.Error = "Email o contraseña incorrectos.";
                 return View();
             }
 
-            // comparar hash
-            string hash = SHA256(contrasenia);
-
+            string hash = SHA256(model.Contrasenia);
             if (usuario.Contrasenia != hash)
             {
-                ViewBag.Error = "Contraseña incorrecta.";
+                ViewBag.Error = "Email o contraseña incorrectos.";
                 return View();
             }
 
-            // Guardar sesión
             HttpContext.Session.SetInt32("IdUsuario", usuario.IdUsuario);
             HttpContext.Session.SetString("UsuarioNombre", usuario.Nombre);
 
@@ -80,8 +83,7 @@ namespace _TuProy_.MVC.Controllers
                 return View(usuario);
             }
 
-            // Hash de contraseña
-            usuario.Contrasenia = SHA256(usuario.Contrasenia);
+
 
             // Alta
             int id = await _dao.AltaUsuario(usuario);
@@ -99,8 +101,6 @@ namespace _TuProy_.MVC.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-
-
         // =============================
         //        CERRAR SESIÓN
         // =============================
@@ -109,8 +109,6 @@ namespace _TuProy_.MVC.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
-
-
 
         // =============================
         //        HASH SHA-256
@@ -121,6 +119,5 @@ namespace _TuProy_.MVC.Controllers
             byte[] bytes = sha.ComputeHash(System.Text.Encoding.UTF8.GetBytes(texto));
             return Convert.ToHexString(bytes).ToLower();
         }
-
     }
 }
