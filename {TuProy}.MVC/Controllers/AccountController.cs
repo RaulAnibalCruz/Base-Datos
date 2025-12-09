@@ -13,17 +13,11 @@ namespace _TuProy_.MVC.Controllers
             _dao = dao;
         }
 
-        // =============================
-        //      LOGIN GET
-        // =============================
         public IActionResult Login()
         {
             return View();
         }
 
-        // =============================
-        //      LOGIN POST
-        // =============================
         [HttpPost]
         public async Task<IActionResult> Login(Usuario model)
         {
@@ -34,7 +28,6 @@ namespace _TuProy_.MVC.Controllers
             }
 
             var usuario = await _dao.BuscarUsuarioPorEmail(model.Email);
-
             if (usuario == null)
             {
                 ViewBag.Error = "Email o contraseña incorrectos.";
@@ -50,32 +43,34 @@ namespace _TuProy_.MVC.Controllers
 
             HttpContext.Session.SetInt32("IdUsuario", usuario.IdUsuario);
             HttpContext.Session.SetString("UsuarioNombre", usuario.Nombre);
-
             return RedirectToAction("Index", "Home");
         }
 
-        // =============================
-        //         REGISTRO GET
-        // =============================
         public IActionResult Registrar()
         {
             return View();
         }
 
-        // =============================
-        //         REGISTRO POST
-        // =============================
         [HttpPost]
         public async Task<IActionResult> Registrar(Usuario usuario)
         {
-            // Validar email
-            if (!usuario.Email.EndsWith("@gmail.com", StringComparison.OrdinalIgnoreCase))
+            if (!ModelState.IsValid)
             {
-                ViewBag.Error = "El email debe terminar en @gmail.com.";
                 return View(usuario);
             }
 
-            // Email repetido
+            // Validación de formato de email (AHORA SÍ BIEN ESCRITA)
+                    if (string.IsNullOrWhiteSpace(usuario.Email) ||
+                !usuario.Email.Contains("@") ||
+                usuario.Email.EndsWith("@") ||
+                usuario.Email.LastIndexOf(".") <= usuario.Email.IndexOf("@") + 1)
+            {
+                ViewBag.Error = "El email debe tener un formato válido (ej: nombre@dominio.com)";
+                return View(usuario);
+            }
+
+            // ← este corchete cierra el if correctamente
+
             var existe = await _dao.BuscarUsuarioPorEmail(usuario.Email);
             if (existe != null)
             {
@@ -83,36 +78,25 @@ namespace _TuProy_.MVC.Controllers
                 return View(usuario);
             }
 
-
-
-            // Alta
             int id = await _dao.AltaUsuario(usuario);
-
-            if (id == -1)
+            if (id <= 0)
             {
-                ViewBag.Error = "El email ya está registrado.";
+                ViewBag.Error = "Error al registrar. Intenta de nuevo.";
                 return View(usuario);
             }
 
-            // Registrar y loguear automáticamente
             HttpContext.Session.SetInt32("IdUsuario", id);
             HttpContext.Session.SetString("UsuarioNombre", usuario.Nombre);
 
             return RedirectToAction("Index", "Home");
         }
 
-        // =============================
-        //        CERRAR SESIÓN
-        // =============================
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
 
-        // =============================
-        //        HASH SHA-256
-        // =============================
         private string SHA256(string texto)
         {
             using var sha = System.Security.Cryptography.SHA256.Create();

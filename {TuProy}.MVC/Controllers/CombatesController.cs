@@ -8,34 +8,25 @@ namespace _TuProy_.MVC.Controllers
     {
         private readonly IDao _dao;
 
-        public CombatesController(IDao dao)
-        {
-            _dao = dao;
-        }
+        public CombatesController(IDao dao) => _dao = dao;
 
-        // =============================
-        //      INDEX - Listar Combates
-        // =============================
+        // INDEX - Muestra nombres
         public async Task<IActionResult> Index()
         {
-            var combates = await _dao.ObtenerTodoCombate();
+            var combates = await _dao.ObtenerTodosCombatesConNombres();
             return View(combates);
         }
 
-        // =============================
-        //      CREATE GET
-        // =============================
+        // CREATE GET
         public async Task<IActionResult> Create()
         {
             ViewBag.Personajes = await _dao.ObtenerTodoPersonaje();
-            ViewBag.Modos = await _dao.ObtenerTodoModoJuego();
-            ViewBag.Usuarios = await _dao.ObtenerTodoUsuario();
+            ViewBag.Usuarios   = await _dao.ObtenerTodoUsuario();
+            ViewBag.Modos      = await _dao.ObtenerTodoModoJuego();
             return View();
         }
 
-        // =============================
-        //      CREATE POST
-        // =============================
+        // CREATE POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Combate combate)
@@ -47,24 +38,20 @@ namespace _TuProy_.MVC.Controllers
             }
 
             ViewBag.Personajes = await _dao.ObtenerTodoPersonaje();
-            ViewBag.Modos = await _dao.ObtenerTodoModoJuego();
-            ViewBag.Usuarios = await _dao.ObtenerTodoUsuario();
+            ViewBag.Usuarios   = await _dao.ObtenerTodoUsuario();
+            ViewBag.Modos      = await _dao.ObtenerTodoModoJuego();
             return View(combate);
         }
 
-        // =============================
-        //      DETAILS
-        // =============================
+        // DETAILS - ÚNICO Y FUNCIONAL
         public async Task<IActionResult> Details(int id)
         {
-            var combate = await _dao.ObtenerCombatePorId(id);
+            var combate = await _dao.ObtenerCombateConNombres(id);
             if (combate == null) return NotFound();
             return View(combate);
         }
 
-        // =============================
-        //      ELIMINAR
-        // =============================
+        // ELIMINAR
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Eliminar(int id)

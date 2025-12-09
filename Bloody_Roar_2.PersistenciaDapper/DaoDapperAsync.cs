@@ -215,6 +215,22 @@ public class DaoDapperAsync : IDao
 }
 
 
+
+public async Task<IEnumerable<CombateCompleto>> ObtenerTodosCombatesConNombres()
+{
+    return await _conexion.QueryAsync<CombateCompleto>(
+        "ObtenerTodosCombatesConNombres",
+        commandType: CommandType.StoredProcedure);
+}
+
+public async Task<CombateCompleto?> ObtenerCombateConNombres(int id)
+{
+    return await _conexion.QuerySingleOrDefaultAsync<CombateCompleto>(
+        "ObtenerCombateConNombres",
+        new { p_id = id },
+        commandType: CommandType.StoredProcedure);
+}
+
 }
 
 

@@ -39,5 +39,9 @@ public interface IDao
 
     Task<IEnumerable<Combate>> ObtenerTodoCombate();
 
+
+    Task<IEnumerable<CombateCompleto>> ObtenerTodosCombatesConNombres();
+    
+    Task<CombateCompleto?> ObtenerCombateConNombres(int id);
 }
 

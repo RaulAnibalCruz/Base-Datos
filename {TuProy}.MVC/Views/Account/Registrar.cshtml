@@ -23,12 +23,16 @@
             </div>
 
             <!-- Email -->
-            <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input asp-for="Email" class="form-control" placeholder="tuemail@gmail.com" required />
-                <span class="text-danger" asp-validation-for="Email"></span>
-            </div>
-
+                <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Email" 
+                class="form-control" 
+                placeholder="tuemail@dominio.com" 
+                required />
+            <small class="text-muted">Ej: nombre@yahoo.com, nombre@outlook.com, nombre@empresa.com</small>
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+        
             <!-- Contraseña -->
             <div class="mb-3">
                 <label class="form-label">Contraseña</label>

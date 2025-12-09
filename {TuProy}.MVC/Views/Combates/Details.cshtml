@@ -1,13 +1,8 @@
-@model Bloody_Roar_2.Combate
+@model Bloody_Roar_2.CombateCompleto
 
-<h2>Detalle de Combate</h2>
-
-<div class="card p-3" style="width:300px;">
-    <p><strong>Id Combate:</strong> @Model.IdCombate</p>
-    <p><strong>Id Personaje:</strong> @Model.IdPersonaje</p>
-    <p><strong>Id Usuario:</strong> @Model.IdUsuario</p>
-    <p><strong>Id Modo de Juego:</strong> @Model.IdModo_Juego</p>
-    <p><strong>Duración:</strong> @Model.Duracion</p>
-</div>
-
-<a asp-action="Index" class="btn btn-secondary mt-2">Volver a la lista</a>
+<h2>Detalle Combate #@Model.IdCombate</h2>
+<p><strong>Personaje:</strong> @Model.NombrePersonaje</p>
+<p><strong>Usuario:</strong> @Model.NombreUsuario</p>
+<p><strong>Modo:</strong> @Model.NombreModoJuego</p>
+<p><strong>Duración:</strong> @Model.Duracion seg.</p>
+<a asp-action="Index">Volver</a>

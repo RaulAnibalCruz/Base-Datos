@@ -1,36 +1,55 @@
-@model IEnumerable<Bloody_Roar_2.Combate>
+@model IEnumerable<Bloody_Roar_2.CombateCompleto>
 
-<h2>Combates</h2>
+@{
+    ViewData["Title"] = "Lista de Combates";
+}
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Id Combate</th>
-            <th>Personaje</th>
-            <th>Usuario</th>
-            <th>Modo de Juego</th>
-            <th>Duración</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var c in Model)
-    {
-        <tr>
-            <td>@c.IdCombate</td>
-            <td>@c.IdPersonaje</td>
-            <td>@c.IdUsuario</td>
-            <td>@c.IdModo_Juego</td>
-            <td>@c.Duracion</td>
-            <td>
-                <a asp-action="Details" asp-route-id="@c.IdCombate" class="btn btn-sm btn-info">Ver</a>
-                <form asp-action="Eliminar" asp-route-id="@c.IdCombate" method="post" style="display:inline;">
-                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                </form>
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
+<h2>Combates Registrados</h2>
 
-<a asp-action="Create" class="btn btn-success mt-2">Agregar Combate</a>
+<p>
+    <a asp-action="Create" class="btn btn-success">
+        <i class="fas fa-plus"></i> Crear Nuevo Combate
+    </a>
+</p>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        <strong>¡Aún no hay combates registrados!</strong><br />
+        Haz clic en el botón verde para crear el primero.
+    </div>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Personaje</th>
+                <th>Usuario</th>
+                <th>Modo de Juego</th>
+                <th>Duración</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.IdCombate</td>
+                    <td><strong>@c.NombrePersonaje</strong></td>
+                    <td>@c.NombreUsuario</td>
+                    <td>@c.NombreModoJuego</td>
+                    <td>@c.Duracion seg.</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@c.IdCombate" class="btn btn-sm btn-info">Ver</a>
+                        <form asp-action="Eliminar" asp-route-id="@c.IdCombate" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-danger" 
+                                    onclick="return confirm('¿Eliminar este combate?')">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
