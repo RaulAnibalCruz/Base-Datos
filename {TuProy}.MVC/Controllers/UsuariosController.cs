@@ -76,5 +76,27 @@ namespace _TuProy_.MVC.Controllers
             await _dao.EliminarUsuario(id);
             return RedirectToAction("Index");
         }
+
+                // NUEVA ACCIÓN - Muestra los combates de un usuario específico
+                public async Task<IActionResult> CombatesPorUsuario(int idUsuario)
+            {
+                var usuario = await _dao.ObtenerUsuario(idUsuario);
+                if (usuario == null) return NotFound();
+
+                // Traemos TODOS los combates con nombres
+                var todosLosCombates = await _dao.ObtenerTodosCombatesConNombres();
+
+                // Filtramos por el usuario
+                var combatesDelUsuario = todosLosCombates
+                    .Where(c => c.IdUsuario == idUsuario)  // ← funciona porque el SP SÍ devuelve IdUsuario
+                    .ToList();
+
+                ViewBag.UsuarioNombre = usuario.Nombre;
+                ViewBag.UsuarioId = idUsuario;
+
+                return View(combatesDelUsuario);
+            }
     }
+
+    
 }

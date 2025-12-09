@@ -18,8 +18,22 @@
                 <td>@u.Nombre</td>
                 <td>@u.Email</td>
             <td>
-            <a asp-action="Eliminar" asp-route-id="@u.IdUsuario" class="btn btn-danger btn-sm">Eliminar</a>
+            
+            <a asp-action="CombatesPorUsuario" 
+            asp-route-idUsuario="@u.IdUsuario" 
+            class="btn btn-sm btn-primary me-1">
+                Combates
+            </a>
+
+            <form asp-action="Eliminar" asp-route-id="@u.IdUsuario" method="post" style="display:inline;">
+                <button type="submit" 
+                        class="btn btn-sm btn-danger" 
+                        onclick="return confirm('¿Seguro que querés eliminar este usuario?')">
+                    Eliminar
+                </button>
+            </form>
         </td>
+        
             </tr>
         }
     </tbody>

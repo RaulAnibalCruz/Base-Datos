@@ -1,19 +1,20 @@
--- Active: 1727132803198@@127.0.0.1@3306@5to_Bloody_Roar_2
+-- =============================================
+-- BASE DE DATOS BLOODY ROAR 2 - VERSIÓN FINAL CORREGIDA
+-- CON ON DELETE CASCADE EN TODAS LAS FK
+-- =============================================
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
--- -----------------------------------------------------
--- Schema 5to_Bloody_Roar_2
--- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `5to_Bloody_Roar_2`;
 CREATE SCHEMA IF NOT EXISTS `5to_Bloody_Roar_2`;
 USE `5to_Bloody_Roar_2`;
 
 -- -----------------------------------------------------
--- Table Personaje
+-- Tabla Personaje
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `5to_Bloody_Roar_2`.`Personaje` (
+CREATE TABLE IF NOT EXISTS `Personaje` (
   `idPersonaje` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(45) NOT NULL,
   `NombreBestia` VARCHAR(45) NOT NULL,
@@ -22,77 +23,83 @@ CREATE TABLE IF NOT EXISTS `5to_Bloody_Roar_2`.`Personaje` (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table Ataque
+-- Tabla Ataque → borra en cascada si se borra el personaje
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `5to_Bloody_Roar_2`.`Ataque` (
+CREATE TABLE IF NOT EXISTS `Ataque` (
   `idAtaque` INT NOT NULL AUTO_INCREMENT,
   `Tipo_Ataque` VARCHAR(45) NULL,
   `Danio` INT NULL,
   `idPersonaje` INT NOT NULL,
   PRIMARY KEY (`idAtaque`),
+  INDEX `fk_Ataque_Personaje_idx` (`idPersonaje` ASC) VISIBLE,
   CONSTRAINT `fk_Ataque_Personaje`
     FOREIGN KEY (`idPersonaje`)
-    REFERENCES `5to_Bloody_Roar_2`.`Personaje` (`idPersonaje`)
+    REFERENCES `Personaje` (`idPersonaje`)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table Usuario
+-- Tabla Usuario
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Usuario` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(100),
-  `Contrasenia` VARCHAR(256),
-  `Email` VARCHAR(100),
+  `Nombre` VARCHAR(100) NULL,
+  `Contrasenia` VARCHAR(256) NULL,
+  `Email` VARCHAR(100) NULL,
   PRIMARY KEY (`idUsuario`),
-  UNIQUE KEY uq_usuario_email (`Email`)
-) ENGINE=InnoDB;
-
-
-
-
+  UNIQUE INDEX `uq_usuario_email` (`Email` ASC) VISIBLE
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table ModoJuego
+-- Tabla ModoJuego
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `5to_Bloody_Roar_2`.`ModoJuego` (
+CREATE TABLE IF NOT EXISTS `ModoJuego` (
   `idModoJuego` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(45) NULL,
   PRIMARY KEY (`idModoJuego`)
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table Combate
+-- Tabla Combate → ON DELETE CASCADE EN LAS 3 FK
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `5to_Bloody_Roar_2`.`Combate` (
+CREATE TABLE IF NOT EXISTS `Combate` (
   `idCombate` INT NOT NULL AUTO_INCREMENT,
   `idPersonaje` INT NOT NULL,
   `idUsuario` INT NOT NULL,
+  'fecha_hora' datetime not null,
   `idModo_Juego` INT NOT NULL,
   `Duracion` INT NULL,
   PRIMARY KEY (`idCombate`),
-  CONSTRAINT `fk_Partida_1`
-    FOREIGN KEY (`idUsuario`)
-    REFERENCES `5to_Bloody_Roar_2`.`Usuario` (`idUsuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Partida_2`
-    FOREIGN KEY (`idModo_Juego`)
-    REFERENCES `5to_Bloody_Roar_2`.`ModoJuego` (`idModoJuego`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Partida_3`
-    FOREIGN KEY (`idPersonaje`)
-    REFERENCES `5to_Bloody_Roar_2`.`Personaje` (`idPersonaje`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-) ENGINE = InnoDB;
+  
+  INDEX `fk_Combate_Personaje_idx` (`idPersonaje` ASC) VISIBLE,
+  INDEX `fk_Combate_Usuario_idx` (`idUsuario` ASC) VISIBLE,
+  INDEX `fk_Combate_ModoJuego_idx` (`idModo_Juego` ASC) VISIBLE,
 
-CREATE INDEX `fk_Partida_1_idx` ON `5to_Bloody_Roar_2`.`Combate` (`idUsuario` ASC) VISIBLE;
-CREATE INDEX `fk_Partida_2_idx` ON `5to_Bloody_Roar_2`.`Combate` (`idModo_Juego` ASC) VISIBLE;
-CREATE INDEX `fk_Partida_3_idx` ON `5to_Bloody_Roar_2`.`Combate` (`idPersonaje` ASC) VISIBLE;
+  CONSTRAINT `fk_Combate_Personaje`
+    FOREIGN KEY (`idPersonaje`)
+    REFERENCES `Personaje` (`idPersonaje`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  CONSTRAINT `fk_Combate_Usuario`
+    FOREIGN KEY (`idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  CONSTRAINT `fk_Combate_ModoJuego`
+    FOREIGN KEY (`idModo_Juego`)
+    REFERENCES `ModoJuego` (`idModoJuego`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+) ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- =============================================
+-- FIN - AHORA PUEDES BORRAR USUARIOS, PERSONAJES Y MODOS
+-- Y TODOS SUS DATOS RELACIONADOS SE BORRAN SOLOS
+-- =============================================

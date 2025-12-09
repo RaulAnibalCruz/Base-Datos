@@ -1,0 +1,49 @@
+@model IEnumerable<Bloody_Roar_2.CombateCompleto>
+
+@{
+    ViewData["Title"] = "Combates de " + ViewBag.UsuarioNombre;
+}
+
+<h2>Combates de <strong>@ViewBag.UsuarioNombre</strong></h2>
+
+<p>
+    <a asp-action="Index" class="btn btn-secondary">
+        ← Volver a lista de usuarios
+    </a>
+</p>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info mt-3">
+        Este usuario aún no tiene combates registrados.
+    </div>
+}
+else
+{
+    <table class="table table-striped table-hover mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>ID Combate</th>
+                <th>Personaje</th>
+                <th>Modo de Juego</th>
+                <th>Duración</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.IdCombate</td>
+                    <td>@c.NombrePersonaje</td>
+                    <td>@c.NombreModoJuego</td>
+                    <td>@c.Duracion seg.</td>
+                    <td>
+                        <a asp-controller="Combates" asp-action="Details" asp-route-id="@c.IdCombate" 
+                           class="btn btn-sm btn-info">Ver detalle</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
