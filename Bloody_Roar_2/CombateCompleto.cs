@@ -8,5 +8,7 @@ namespace Bloody_Roar_2
         public string NombrePersonaje { get; set; } = "";
         public string NombreUsuario { get; set; } = "";
         public string NombreModoJuego { get; set; } = "";
+
+        public DateTime FechaHora { get; set; }
     }
 }

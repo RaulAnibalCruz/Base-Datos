@@ -122,6 +122,7 @@ BEGIN
     SELECT
         c.idCombate      AS IdCombate,
         c.Duracion       AS Duracion,
+        c.fecha_hora     AS FechaHora,
         c.idUsuario     AS IdUsuario,
         p.Nombre         AS NombrePersonaje,
         u.Nombre         AS NombreUsuario,
@@ -139,6 +140,7 @@ BEGIN
     SELECT
         c.idCombate      AS IdCombate,
         c.Duracion       AS Duracion,
+        c.fecha_hora     AS FechaHora,
         p.Nombre         AS NombrePersonaje,
         u.Nombre         AS NombreUsuario,
         m.Nombre         AS NombreModoJuego

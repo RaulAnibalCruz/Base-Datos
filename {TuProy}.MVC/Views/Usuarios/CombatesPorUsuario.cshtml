@@ -27,6 +27,7 @@ else
                 <th>Personaje</th>
                 <th>Modo de Juego</th>
                 <th>Duración</th>
+                <th>Fecha y Hora</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -38,6 +39,7 @@ else
                     <td>@c.NombrePersonaje</td>
                     <td>@c.NombreModoJuego</td>
                     <td>@c.Duracion seg.</td>
+                    <td>@c.FechaHora.ToString("dd/MM/yyyy HH:mm")</td>
                     <td>
                         <a asp-controller="Combates" asp-action="Details" asp-route-id="@c.IdCombate" 
                            class="btn btn-sm btn-info">Ver detalle</a>

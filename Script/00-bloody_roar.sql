@@ -67,9 +67,9 @@ CREATE TABLE IF NOT EXISTS `Combate` (
   `idCombate` INT NOT NULL AUTO_INCREMENT,
   `idPersonaje` INT NOT NULL,
   `idUsuario` INT NOT NULL,
-  'fecha_hora' datetime not null,
   `idModo_Juego` INT NOT NULL,
   `Duracion` INT NULL,
+  `fecha_hora` DATETIME NOT NULL, 
   PRIMARY KEY (`idCombate`),
   
   INDEX `fk_Combate_Personaje_idx` (`idPersonaje` ASC) VISIBLE,
@@ -93,7 +93,11 @@ CREATE TABLE IF NOT EXISTS `Combate` (
     REFERENCES `ModoJuego` (`idModoJuego`)
     ON DELETE CASCADE
     ON UPDATE CASCADE
+
+
+    
 ) ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

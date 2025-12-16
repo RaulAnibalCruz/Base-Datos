@@ -29,6 +29,7 @@ else
                 <th>Usuario</th>
                 <th>Modo de Juego</th>
                 <th>Duración</th>
+                <th>Fecha y Hora</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -41,6 +42,7 @@ else
                     <td>@c.NombreUsuario</td>
                     <td>@c.NombreModoJuego</td>
                     <td>@c.Duracion seg.</td>
+                    <td>@c.FechaHora.ToString("dd/MM/yyyy HH:mm")</td>
                     <td>
                         <a asp-action="Details" asp-route-id="@c.IdCombate" class="btn btn-sm btn-info">Ver</a>
                         <form asp-action="Eliminar" asp-route-id="@c.IdCombate" method="post" style="display:inline;">
