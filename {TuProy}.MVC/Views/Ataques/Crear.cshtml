@@ -2,6 +2,11 @@
 
 <h2>Crear Ataque</h2>
 
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
 <div asp-validation-summary="All" class="text-danger"></div>
 
 
@@ -13,7 +18,8 @@
 
     <div class="mb-3">
         <label class="form-label">Daño</label>
-        <input asp-for="Danio" class="form-control" type="number" required />
+        <input asp-for="Danio" class="form-control" type="number" min="1" required />
+        <span asp-validation-for="Danio" class="text-danger"></span>
     </div>
 
     <div class="mb-3">

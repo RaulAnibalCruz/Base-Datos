@@ -5,13 +5,13 @@ DELIMITER $$
 -- 1. AltaPersonaje
 DROP PROCEDURE IF EXISTS AltaPersonaje $$
 CREATE PROCEDURE AltaPersonaje (
-    OUT p_idPersonaje INT, 
-    IN p_Nombre VARCHAR(45), 
-    IN p_NombreBestia VARCHAR(45), 
+    OUT p_idPersonaje INT,
+    IN p_Nombre VARCHAR(45),
+    IN p_NombreBestia VARCHAR(45),
     IN p_ResistenciaBestia INT
 )
 BEGIN
-    INSERT INTO Personaje (Nombre, NombreBestia, ResistenciaBestia) 
+    INSERT INTO Personaje (Nombre, NombreBestia, ResistenciaBestia)
     VALUES (p_Nombre, p_NombreBestia, p_ResistenciaBestia);
     SET p_idPersonaje = LAST_INSERT_ID();
 END $$
@@ -73,7 +73,7 @@ BEGIN
     UPDATE Combate SET Duracion = p_Duracion WHERE idCombate = p_idCombate;
 END $$
 
--- 6. AltaModoJuego (CORREGIDO)
+-- 6. AltaModoJuego
 DROP PROCEDURE IF EXISTS AltaModoJuego $$
 CREATE PROCEDURE AltaModoJuego (
     OUT unIdModoJuego INT,
@@ -84,12 +84,17 @@ BEGIN
     SET unIdModoJuego = LAST_INSERT_ID();
 END $$
 
--- 7. EliminarAtaque
+-- 7. EliminarAtaque (CORREGIDO: con DELIMITER correcto)
+DELIMITER $$
+
 DROP PROCEDURE IF EXISTS EliminarAtaque $$
-CREATE PROCEDURE EliminarAtaque(IN idAtaque INT)
+
+CREATE PROCEDURE EliminarAtaque(IN p_idAtaque INT)
 BEGIN
-    DELETE FROM Ataque WHERE idAtaque = idAtaque;
+    DELETE FROM Ataque WHERE idAtaque = p_idAtaque;
 END $$
+
+DELIMITER ;
 
 -- 8. BuscarUsuarioPorEmail
 DROP PROCEDURE IF EXISTS BuscarUsuarioPorEmail $$
@@ -105,7 +110,7 @@ END $$
 DROP PROCEDURE IF EXISTS ObtenerAtaque $$
 CREATE PROCEDURE ObtenerAtaque()
 BEGIN
-    SELECT 
+    SELECT
         a.idAtaque,
         a.Tipo_Ataque AS TipoAtaque,
         a.Danio,
@@ -115,15 +120,15 @@ BEGIN
     INNER JOIN Personaje p ON a.idPersonaje = p.idPersonaje;
 END $$
 
--- NUEVOS SP PARA COMBATES CON NOMBRES
+-- SP para combates con nombres
 DROP PROCEDURE IF EXISTS ObtenerTodosCombatesConNombres $$
 CREATE PROCEDURE ObtenerTodosCombatesConNombres()
 BEGIN
     SELECT
         c.idCombate      AS IdCombate,
+        c.idUsuario      AS IdUsuario,
         c.Duracion       AS Duracion,
         c.fecha_hora     AS FechaHora,
-        c.idUsuario     AS IdUsuario,
         p.Nombre         AS NombrePersonaje,
         u.Nombre         AS NombreUsuario,
         m.Nombre         AS NombreModoJuego

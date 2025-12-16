@@ -207,11 +207,10 @@ public class DaoDapperAsync : IDao
         await _conexion.ExecuteAsync("DELETE FROM ModoJuego WHERE idModoJuego = @idModoJuego", new { idModoJuego });
     }
 
-    public async Task EliminarAtaque(int id)
+public async Task EliminarAtaque(int id)
 {
-    var parametros = new DynamicParameters();
-    parametros.Add("@idAtaque", id);
-    await _conexion.ExecuteAsync("EliminarAtaque", parametros, commandType: CommandType.StoredProcedure);
+    var query = "DELETE FROM Ataque WHERE idAtaque = @IdAtaque";
+    await _conexion.ExecuteAsync(query, new { IdAtaque = id });
 }
 
 

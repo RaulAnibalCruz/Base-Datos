@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m+3cJ2WVA64=",
+  "dgSpecHash": "/YOB/Lu8U0M=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.15\\microsoft.netcore.app.ref.8.0.15.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.15\\microsoft.windowsdesktop.app.ref.8.0.15.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.15\\microsoft.aspnetcore.app.ref.8.0.15.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Base-Datos\\Bloody_Roar_2\\Bloody_Roar_2.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

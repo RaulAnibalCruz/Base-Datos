@@ -4,7 +4,7 @@
 
 <a class="btn btn-primary mb-3" asp-action="Crear">Crear nuevo ataque</a>
 
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>ID</th>
@@ -23,9 +23,11 @@
                 <td>@ataque.Danio</td>
                 <td>@ataque.NombrePersonaje</td>
                 <td>
-                    <form asp-action="Eliminar" method="post">
-                        <input type="hidden" name="id" value="@ataque.IdAtaque" />
-                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    <form asp-action="Eliminar" asp-route-id="@ataque.IdAtaque" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger"
+                                onclick="return confirm('¿Eliminar este ataque?')">
+                            Eliminar
+                        </button>
                     </form>
                 </td>
             </tr>
